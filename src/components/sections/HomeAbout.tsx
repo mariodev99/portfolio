@@ -3,7 +3,7 @@ import { SectionTitle } from '../common/SectionTitle'
 
 export default function HomeAbout() {
   return (
-    <div id='section_about' className='my-10'>
+    <div id='section_about' className='my-10 md:my-20'>
         <SectionTitle text='Sobre mi'/>
         <p className='text-base md:text-xl mt-5'>
         Hola! Me llamo Luciano Mariotti, soy desarrollador frontend. 

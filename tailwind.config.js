@@ -13,6 +13,7 @@ module.exports = {
         // dark: "#001018",
         // primary: "#eaff00",
         // bgprimary: "rgba(0, 163, 255, 0.09)",
+
         // Theme 2
         dark: "#090909",
         primary: "#00A3FF",

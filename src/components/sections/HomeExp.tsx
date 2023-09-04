@@ -41,12 +41,17 @@ const Experiencie = ({ages, company, position, tasks, index}:experienceData & {i
         </div>
 
         {/* item */}
-        {index > 0 ? 
+        {index > 0 ?
             <div className='flex justify-center'>
                 <div className={`w-[2px]  bg-white flex items-center relative ${timelineExp.length === index + 1 && "bg-gradient-to-b from-white to-black"}`}>
                     <div className='absolute bg-primary left-[-7px] w-4 h-4 rounded-full'></div>
                 </div>
-            </div>             
+                {/* {timelineExp.length === index + 1 &&             
+                <div className='mt-1 font-medium flex justify-center'>
+                    <p className='text-sm md:text-xl'>2020</p>
+                </div> }      */}
+            </div>
+
             : 
             <div className='flex justify-center items-end'>
                 <div className='w-[2px] h-[50%] bg-white flex items-start relative'>
@@ -57,14 +62,13 @@ const Experiencie = ({ages, company, position, tasks, index}:experienceData & {i
 
         <div className='hidden md:flex items-center h-40 md:h-56'>
             <p>{tasks}</p>
-            
         </div>
     </div>
 )
 
 export default function HomeExp() {
   return (
-    <section id='section_experience' className='mt-10'>
+    <section id='section_experience' className='my-10 md:my-20'>
         <SectionTitle text='Experiencia'/>
         
         <div className='mt-5'>
@@ -73,8 +77,13 @@ export default function HomeExp() {
             {timelineExp.map( (experience, index) => (
                 <Experiencie key={experience.company} {...experience} index={index} />
             ))}
-            <div className='mt-1 font-medium flex justify-center'>
-                <p className='text-sm md:text-xl'>2020</p>
+            
+            <div className='grid grid-cols-2 md:grid-cols-3 '>
+                <div/>
+                <div className='text-[#777] text-sm md:text-xl mt-1 font-medium flex justify-center'>
+                    <p>2020</p>
+                </div>
+                <div/>
             </div>
         </div>
   </section>

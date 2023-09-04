@@ -92,7 +92,7 @@ const list:projectData[] = [
 
 export default function HomeProjects() {
   return (
-    <section id='section_proyects' className='mt-10'>
+    <section id='section_proyects' className='my-10 md:my-20'>
     <SectionTitle text='Proyectos'/>
     <div className='mt-10 flex flex-col gap-5 md:gap-10'>
       {list.slice(0,3).map((project, index) => (

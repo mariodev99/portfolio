@@ -16,14 +16,15 @@ const skills = [
     "SQL",
     "MongoDB",
     "Firebase",
-    "Framer-Motion"
+    "Framer-Motion",
+    "Git/Github"
 ]
 
 export default function HomeSkills() {
   return (
-    <section id='section_skills' className='mt-10'>
+    <section id='section_skills' className='my-10 md:my-20'>
         <SectionTitle text='Habilidades y herramientas'/>
-        <div className='mt-5 flex flex-wrap gap-3'>
+        <div className='mt-10 flex flex-wrap gap-3'>
         {skills.map( skill => (
             <PrimaryBox key={skill} size='lg' text={skill}/>
         ))}

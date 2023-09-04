@@ -58,7 +58,16 @@ const navLinks:navItem[] = [
 const DesktopNavbar = () => (
   <div className='hidden md:flex justify-between items-center  px-5'>
     <div className='font-semibold text-2xl'>Mario.dev</div>
-    <PrimaryBox size='lg' text={"Contacto"}/>
+    <ol className='flex gap-5 items-center'>
+      <a className='hover:text-primary transition-all' href='/#section_about'>Sobre mí</a>
+      <a className='hover:text-primary transition-all' href='/#section_about'>Experiencia</a>
+      <a className='hover:text-primary transition-all' href='/#section_about'>Proyectos</a>
+      <a className='hover:text-primary transition-all' href='/#section_about'>Habilidades</a>
+
+      <a href='mailto:luciano.mariotti99@gmail.com'>
+        <PrimaryBox size='lg' text={"Contactar"}/>
+      </a>
+    </ol>
   </div>
 )
 
