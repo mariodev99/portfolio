@@ -9,6 +9,7 @@ import chokersProjectImage from "../../../public/images/mmchokers_project.jpg"
 import flashcardsProjectImage from "../../../public/images/projects/flashcardsProject.jpg"
 import realestateProjectImage from "../../../public/images/projects/realstateProject.jpg"
 import ladingProjectImage from "../../../public/images/projects/ladingProject.png"
+import portfolio2ProjectImage from "../../../public/images/projects/portfolio2Image.jpg"
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -80,13 +81,13 @@ const list:projectData[] = [
       image: ladingProjectImage
   },
     {
-      title: "Portfolio 3",
-      tecnologies: ["Framer-motion", "Tailwind.css"],
+      title: "Portfolio 2",
+      tecnologies: ["React.js", "Chakra UI"],
       urlGithub: "https://github.com/mariodev9/LandingPage_1",
       urlSite: "https://ladingproject1.vercel.app/",
       description:
         "Diseño de una interfaz con animaciones en Figma, pasada a codigo con framer-motion, HTML y CSS",
-      image: ladingProjectImage
+      image: portfolio2ProjectImage
   },
   ];
 
