@@ -10,6 +10,7 @@ import HomeSkills from '@/components/sections/HomeSkills'
 import { GithubIcon } from '@/components/icons'
 import HomeContact from '@/components/sections/HomeContact'
 import HomeAbout from '@/components/sections/HomeAbout'
+import Footer from '@/components/layout/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -40,6 +41,7 @@ export default function Home() {
           <HomeContact/>
         </>
       </Layout>
+      <Footer/>
 
     </main>
   )

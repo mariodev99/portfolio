@@ -15,7 +15,6 @@ export const Layout = ({children}:Props) => {
           {children}
       </div>
     </div>
-    <Footer/>
     </>
   )
 }
