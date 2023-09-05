@@ -17,6 +17,7 @@ const skills = [
     "MongoDB",
     "Firebase",
     "Framer-Motion",
+    "React-Hook-Form",
     "Git/Github"
 ]
 

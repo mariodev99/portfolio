@@ -11,7 +11,7 @@ export const Layout = ({children}:Props) => {
     <>
     <div className='flex justify-center'>
       <Nav/>
-      <div className='container max-w-7xl px-5 md:px-0'>
+      <div className='container max-w-7xl px-5 md:px-0 '>
           {children}
       </div>
     </div>

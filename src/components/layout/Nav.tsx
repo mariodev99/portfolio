@@ -57,7 +57,9 @@ const navLinks:navItem[] = [
 
 const DesktopNavbar = () => (
   <div className='hidden md:flex justify-between items-center  px-5'>
-    <div className='font-semibold text-2xl'>Mario.dev</div>
+    <a href=''>
+      <div className='font-semibold text-2xl'>Mario.dev</div>
+    </a>
     <ol className='flex gap-5 items-center'>
       {navLinks.slice(0,4).map( item=> (
         <a key={item.name} className='hover:text-primary transition-all' href={item.url}>{item.name}</a>

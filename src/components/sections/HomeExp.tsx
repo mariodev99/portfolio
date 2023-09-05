@@ -13,7 +13,7 @@ const timelineExp:experienceData[] = [
         company: "Freelancer",
         position: "Desarrollador Fullstack",
         ages: "2023",
-        tasks: "Me desempeño como desarrollador freelance haciendo pequeñas tareas como integración de APIs, componentes reutilizables, corrección de errores, etc.",
+        tasks: "Me desempeño como desarrollador freelance haciendo pequeñas tareas como integración de APIs, componentes reutilizables, corrección de errores, diseños responsive y más.",
     },
     {
         company: "IF Soluciones",

@@ -33,15 +33,7 @@ const list:projectData[] = [
         "Red social donde puedes conectarte con otros desarrolladores! Puedes crear tu perfil incluyendo tu stack de tecnologias de una forma divertida, compartir, interactuar y comentar publicaciones.",
       image: codepartyProjectImage
       },
-    {
-      title: "8bitstore",
-      tecnologies: ["Next.js", "Framer-motion", "Chakra UI"],
-      urlGithub: "https://github.com/mariodev9/8bitStore",
-      urlSite: "https://8bit-store.vercel.app/",
-      description:
-        "Tienda de camisetas basado en 8bitfootball. Mira las ultimas camisetas del momento de una forma divertida y elegí tus favoritas!",
-      image: bitProjectImage
-      },
+
     {
       title: "Flashcards",
       tecnologies: ["Next.js", "Typescript", "Firebase", "Chakra UI"],
@@ -52,6 +44,15 @@ const list:projectData[] = [
       image: flashcardsProjectImage
       },
       {
+        title: "MMChokers",
+        tecnologies: ["Next.js", "Chakra UI", "Firebase"],
+        urlGithub: "https://github.com/mariodev9/mmchokersweb",
+        urlSite: "https://mmchokers.vercel.app/",
+        description:
+          "Tienda de accesorios de moda como collares, cadenas pulseras y más! Utiliza mercadopago checkout API para realizar pagos",
+        image: chokersProjectImage
+    },
+      {
         title: "Martin Mariotti Real Estate",
         tecnologies: ["Next.js", "Tailwind.css"],
         urlGithub: "https://github.com/frontendcafe/air-flashcards",
@@ -60,24 +61,24 @@ const list:projectData[] = [
           "Esta aplicación resuelve un problema de estudio mediante la creación de colecciones de cartas. A su vez estas cartas te ayudaran a aprender conceptos para facilitar el proceso de aprendizaje",
         image: realestateProjectImage
         },
-      {
-          title: "Home Design Page",
-          tecnologies: ["Framer-motion", "Tailwind.css"],
-          urlGithub: "https://github.com/mariodev9/LandingPage_1",
-          urlSite: "https://ladingproject1.vercel.app/",
+        {
+          title: "8bitstore",
+          tecnologies: ["Next.js", "Framer-motion", "Chakra UI"],
+          urlGithub: "https://github.com/mariodev9/8bitStore",
+          urlSite: "https://8bit-store.vercel.app/",
           description:
-            "Diseño de una interfaz con animaciones en Figma, pasada a codigo con framer-motion, HTML y CSS",
-          image: ladingProjectImage
-      },
-      {
-        title: "Portfolio 2",
-        tecnologies: ["Framer-motion", "Tailwind.css"],
-        urlGithub: "https://github.com/mariodev9/LandingPage_1",
-        urlSite: "https://ladingproject1.vercel.app/",
-        description:
-          "Diseño de una interfaz con animaciones en Figma, pasada a codigo con framer-motion, HTML y CSS",
-        image: ladingProjectImage
-    },
+            "Tienda de camisetas basado en 8bitfootball. Mira las ultimas camisetas del momento de una forma divertida y elegí tus favoritas!",
+          image: bitProjectImage
+          },
+    {
+      title: "Home Design Page",
+      tecnologies: ["Framer-motion", "Tailwind.css"],
+      urlGithub: "https://github.com/mariodev9/LandingPage_1",
+      urlSite: "https://ladingproject1.vercel.app/",
+      description:
+        "Diseño de una interfaz con animaciones en Figma, pasada a codigo con framer-motion, HTML y CSS",
+      image: ladingProjectImage
+  },
     {
       title: "Portfolio 3",
       tecnologies: ["Framer-motion", "Tailwind.css"],

@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <main
-      className={`bg-dark ${inter.className}`}
+      className={`bg-dark ${inter.className} scroll-smooth`}
     >
       <Layout>
           <Header/>
