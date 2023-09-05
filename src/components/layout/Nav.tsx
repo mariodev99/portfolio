@@ -60,7 +60,7 @@ const DesktopNavbar = () => (
     <div className='font-semibold text-2xl'>Mario.dev</div>
     <ol className='flex gap-5 items-center'>
       {navLinks.slice(0,4).map( item=> (
-        <a className='hover:text-primary transition-all' href={item.url}>{item.name}</a>
+        <a key={item.name} className='hover:text-primary transition-all' href={item.url}>{item.name}</a>
       ))}
       <a href='mailto:luciano.mariotti99@gmail.com'>
         <PrimaryBox size='lg' text={"Contactar"}/>
