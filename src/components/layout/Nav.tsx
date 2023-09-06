@@ -5,32 +5,11 @@ import { AnimatePresence, useCycle, useMotionValueEvent, useScroll } from 'frame
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 
+// OBJETO LINK DE NAVEGACION
 interface navItem {
   name: string
   url: string
 }
-
-const itemVariants = {
-  closed: {
-    opacity: 0,
-  },
-  open: { opacity: 1 }
-};
-
-const sideVariants = {
-  closed: {
-    transition: {
-      staggerChildren: 0,
-      staggerDirection: 0
-    }
-  },
-  open: {
-    transition: {
-      staggerChildren: 0.2,
-      staggerDirection: 1
-    }
-  }
-};
 
 const navLinks:navItem[] = [
   {
@@ -55,11 +34,37 @@ const navLinks:navItem[] = [
   },
 ]
 
+// -----------------------------
+
+
+// BARRA DE NAVEGACION MOBILE - MOTION VARIANTS
+const itemVariants = {
+  closed: {
+    opacity: 0,
+  },
+  open: { opacity: 1 }
+};
+
+const sideVariants = {
+  closed: {
+    transition: {
+      staggerChildren: 0,
+      staggerDirection: 0
+    }
+  },
+  open: {
+    transition: {
+      staggerChildren: 0.2,
+      staggerDirection: 1
+    }
+  }
+};
+// -----------------------
+
+
 const DesktopNavbar = () => (
   <div className='hidden md:flex justify-between items-center  px-5'>
-    <a href=''>
-      <div className='font-semibold text-2xl'>Mario.dev</div>
-    </a>
+      <a href='/#section_header' className='font-semibold text-2xl'>Mario.dev</a>
     <ol className='flex gap-5 items-center'>
       {navLinks.slice(0,4).map( item=> (
         <a key={item.name} className='hover:text-primary transition-all' href={item.url}>{item.name}</a>
@@ -134,17 +139,32 @@ const MobileNavbar = () => {
 }
 
 const variants = {
-  visible: { y: 0, opacity: 1 },
-  hidden: { y: -100, opacity: 0 },
+  visible: { 
+    y: 0, 
+    opacity: 1,     
+    transition: {
+      duration: 0.3,
+    },
+  },
+  hidden: { 
+    y: -100, 
+    opacity: 0 
+  },
+  
 };
 
 
 export default function Nav() {
   
+  // Valores del scroll
   const { scrollY } = useScroll();
   const prevScrollY = useRef(0);
+
+  // Estado de la barra de navegacion
   const [hidden, setHidden] = useState(false);
 
+  // Utiliza el valor del scroll para esconder la barra de navegacion 
+  // cuando se scrollea para abajo
   useEffect(() => {
     const handleScroll = () => {
       // Valores del scroll

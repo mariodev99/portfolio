@@ -7,7 +7,6 @@ import { SectionTitle } from '@/components/common/SectionTitle'
 import HomeProjects from '@/components/sections/Projects'
 import HomeExp from '@/components/sections/HomeExp'
 import HomeSkills from '@/components/sections/HomeSkills'
-import { GithubIcon } from '@/components/icons'
 import HomeContact from '@/components/sections/HomeContact'
 import HomeAbout from '@/components/sections/HomeAbout'
 import Footer from '@/components/layout/Footer'
@@ -25,7 +24,7 @@ export default function Home() {
 
   return (
     <main
-      className={`bg-dark ${inter.className} scroll-smooth`}
+      className={`bg-dark ${inter.className} `}
     >
       <Layout>
           <Header/>
