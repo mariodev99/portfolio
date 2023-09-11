@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Footer() {
@@ -6,8 +7,8 @@ export default function Footer() {
         <div className='flex justify-between pb-5 text-sm md:text-xl'>
             <p className='font-semibold'>Luciano Mariotti</p>
             <div className='flex gap-5'>
-                <a href='/#section_proyects'>Proyectos</a>
-                <a href='mailto:luciano.mariotti99@gmail.com'>Contacto</a>
+                <Link href='/#section_proyects'>Proyectos</Link>
+                <Link href='mailto:luciano.mariotti99@gmail.com'>Contacto</Link>
             </div>
         </div>
     </div>
