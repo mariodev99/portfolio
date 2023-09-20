@@ -57,7 +57,7 @@ const list:projectData[] = [
         title: "Martin Mariotti Real Estate",
         tecnologies: ["Next.js", "Tailwind.css"],
         urlGithub: "https://github.com/frontendcafe/air-flashcards",
-        urlSite: "",
+        urlSite: "martinmariotti-realestate.com",
         description:
           "Esta aplicación resuelve un problema de estudio mediante la creación de colecciones de cartas. A su vez estas cartas te ayudaran a aprender conceptos para facilitar el proceso de aprendizaje",
         image: realestateProjectImage
@@ -65,30 +65,30 @@ const list:projectData[] = [
         {
           title: "8bitstore",
           tecnologies: ["Next.js", "Framer-motion", "Chakra UI"],
-          urlGithub: "https://github.com/mariodev9/8bitStore",
+          urlGithub: "https://github.com/mariodev9/martinmariottirealestate",
           urlSite: "https://8bit-store.vercel.app/",
           description:
             "Tienda de camisetas basado en 8bitfootball. Mira las ultimas camisetas del momento de una forma divertida y elegí tus favoritas!",
           image: bitProjectImage
           },
-    {
-      title: "Home Design Page",
-      tecnologies: ["Framer-motion", "Tailwind.css"],
-      urlGithub: "https://github.com/mariodev9/LandingPage_1",
-      urlSite: "https://ladingproject1.vercel.app/",
-      description:
-        "Diseño de una interfaz con animaciones en Figma, pasada a codigo con framer-motion, HTML y CSS",
-      image: ladingProjectImage
-  },
-    {
-      title: "Portfolio 2",
-      tecnologies: ["React.js", "Chakra UI"],
-      urlGithub: "https://github.com/mariodev9/LandingPage_1",
-      urlSite: "https://ladingproject1.vercel.app/",
-      description:
-        "Diseño de una interfaz con animaciones en Figma, pasada a codigo con framer-motion, HTML y CSS",
-      image: portfolio2ProjectImage
-  },
+        {
+          title: "Home Design Page",
+          tecnologies: ["Framer-motion", "Tailwind.css"],
+          urlGithub: "https://github.com/mariodev9/LandingPage_1",
+          urlSite: "https://ladingproject1.vercel.app/",
+          description:
+            "Diseño de una interfaz con animaciones en Figma, pasada a codigo con framer-motion, HTML y CSS",
+          image: ladingProjectImage
+        },
+        {
+          title: "Portfolio 2",
+          tecnologies: ["React.js", "Chakra UI"],
+          urlGithub: "https://github.com/mariodev9/portfolio2",
+          urlSite: "https://mariodev2.vercel.app/",
+          description:
+            "Anterior portfolio",
+          image: portfolio2ProjectImage
+        },
   ];
 
 
@@ -96,20 +96,15 @@ export default function HomeProjects() {
   return (
     <section id='section_proyects' className='my-10 md:my-20'>
     <SectionTitle text='Proyectos'/>
-    <div className='mt-10 flex flex-col gap-5 md:gap-10'>
+    <div className='mt-10 flex flex-col gap-10'>
       {list.slice(0,3).map((project, index) => (
         <div key={project.title} className='grid grid-cols-1 md:grid-cols-2 items-center gap-5'>
-          {/* Image */}
-          <div className={`flex ${index % 2 != 0 ? "order-0" : "md:order-1 md:justify-end"} w-full h-auto md:h-80 `}>
-            <div className='w-full md:w-[80%] h-48 md:h-auto overflow-hidden relative bg-gray-500 rounded-3xl'>
-              <Image className='object-cover' src={project.image} alt='screens del projecto codeparty'/>
-            </div>
-          </div>
+
 
           {/* Info */}
-          <div className={`flex flex-col gap-4 ${index % 2 != 0 ? "md:text-end md:items-end" : "text-start items-start"} `}>
-            <h2 className=' text-xl md:text-4xl font-semibold'>0{index + 1} - {project.title}</h2>
-            <p className={`${index % 2 != 0 ? "md:pl-5" : "pr-5"} text-lg`}>{project.description}</p>
+          <div className={`flex flex-col gap-4 items-start`}>
+            <h2 className=' text-2xl md:text-4xl font-semibold'>0{index + 1} - {project.title}</h2>
+            <p className={` text-lg text-gray-200`}>{project.description}</p>
             <div className='flex gap-4 flex-wrap'>
               {project.tecnologies.map((item) => (
                 <PrimaryBox key={item} size='sm' text={item}></PrimaryBox>
@@ -120,6 +115,13 @@ export default function HomeProjects() {
                 {project.urlSite && <a href={project.urlSite}><SiteIcon/></a>}
             </div>
           </div>  
+
+          {/* Image */}
+          <div className={`flex justify-end w-full h-auto md:h-80 `}>
+            <div className='w-full md:w-[80%] h-48 md:h-auto overflow-hidden relative bg-gray-500 rounded-3xl'>
+              <Image className='object-cover' src={project.image} alt='screens del projecto codeparty'/>
+            </div>
+          </div>
         </div>
       ))}
     </div>
