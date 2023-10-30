@@ -206,8 +206,9 @@ export const Header = () => {
         <ImageProfileStandard/>
       </motion.div>
       <div className={`${poppins.className} order-1 lg:order-2`}>
+        <h2 className='my-3 text-center md:hidden text-xl'>Desarrollador Frontend</h2>
         <motion.h1 
-          className='text-4xl md:text-8xl font-black tracking-wide '
+          className='text-center md:text-start text-4xl md:text-8xl font-black tracking-wide '
           initial={{
             opacity: 0,
             y: -40
@@ -240,6 +241,7 @@ export const Header = () => {
           Desarrollador front end que disfruta de diseñar y plasmar ideas creativas en la web.
         </motion.p>
       </div>
+
   </section>
   )
 }
