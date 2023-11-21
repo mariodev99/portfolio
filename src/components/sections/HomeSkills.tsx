@@ -27,7 +27,7 @@ export default function HomeSkills() {
         <SectionTitle text='Habilidades y herramientas'/>
         <div className='mt-10 flex flex-wrap gap-3'>
         {skills.map( skill => (
-            <PrimaryBox key={skill} size='lg' text={skill}/>
+            <PrimaryBox key={skill} size='sm' text={skill}/>
         ))}
         </div>
     </section>
