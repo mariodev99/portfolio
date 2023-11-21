@@ -60,9 +60,9 @@ export default function StartAnimation() {
   const logoControls = useAnimationControls()
 
   useEffect(() => {
-    logoControls.start({ scale: 1, opacity: 1, transition: { duration: 1, ease: "easeIn", type: "spring"}})
+    logoControls.start({ scale: 1, opacity: 1, transition: { duration: 1,  type: "spring"}})
 
-    logoControls.start({ borderRadius: "42px", transition: { duration: 1.5 , ease: "easeIn", delay: 0.5 , type: "spring"} }) 
+    logoControls.start({ borderRadius: "42px", transition: { duration: 1.5 ,  delay: 0.5 , type: "spring"} }) 
     
     setTimeout(() => {
       logoControls.start({ scale: 100, x: 1000, y: -800, transition: {  duration: 2, ease: "easeOut"} }) 
