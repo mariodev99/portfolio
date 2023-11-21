@@ -3,6 +3,10 @@ import { GithubIcon, SiteIcon } from '../icons'
 import { SectionTitle } from '../common/SectionTitle'
 import { PrimaryBox } from '../common/PrimaryBox'
 import Image, { StaticImageData } from 'next/image'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { ProjectBox } from '../common/ProjectBox'
+// Imagenes
 import bitProjectImage from "../../../public/images/8bit_project.jpg"
 import codepartyProjectImage from "../../../public/images/codeparty_project.jpeg"
 import chokersProjectImage from "../../../public/images/mmchokers_project.jpg"
@@ -10,10 +14,6 @@ import flashcardsProjectImage from "../../../public/images/projects/flashcardsPr
 import realestateProjectImage from "../../../public/images/projects/realstateProject.jpg"
 import ladingProjectImage from "../../../public/images/projects/ladingProject.png"
 import portfolio2ProjectImage from "../../../public/images/projects/portfolio2Image.jpg"
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import { ProjectBox } from '../common/ProjectBox'
 
 interface projectData {
   title: string
@@ -57,7 +57,7 @@ const list:projectData[] = [
         title: "Martin Mariotti Real Estate",
         tecnologies: ["Next.js", "Tailwind.css"],
         urlGithub: "https://github.com/frontendcafe/air-flashcards",
-        urlSite: "martinmariotti-realestate.com",
+        urlSite: "https://martinmariotti-realestate.com",
         description:
           "Esta aplicación resuelve un problema de estudio mediante la creación de colecciones de cartas. A su vez estas cartas te ayudaran a aprender conceptos para facilitar el proceso de aprendizaje",
         image: realestateProjectImage
@@ -89,8 +89,7 @@ const list:projectData[] = [
             "Anterior portfolio",
           image: portfolio2ProjectImage
         },
-  ];
-
+];
 
 export default function HomeProjects() {
   return (
@@ -149,11 +148,8 @@ export default function HomeProjects() {
         },
       }}
     >
-      {list.slice(3).map((item:any, index:number) => (
+      {list.slice(3).map((item:projectData) => (
         <SwiperSlide key={item.title}>
-          {/* <div className='relative h-44 rounded-3xl overflow-hidden'>
-            <Image className='object-cover' src={item.image} alt={`projecto ${item.title}`}/>
-          </div> */}
           <ProjectBox {...item} />
         </SwiperSlide>
       ))}

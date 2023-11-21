@@ -1,18 +1,25 @@
 import Image, { StaticImageData } from 'next/image'
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/router'
 
 interface Props {
   title: string
   image: StaticImageData
+  urlSite: string
 }
 
-export const ProjectBox:React.FC<Props> = ({title, image}) => {
-const [isHover, setIsHover] = useState(false)
+export const ProjectBox:React.FC<Props> = ({title, image, urlSite}) => {
+  const [isHover, setIsHover] = useState(false)
+  const router = useRouter()
+
+  const handleClick = () => {
+    urlSite && router.push(urlSite)
+  }
 
   return (
 
-      <motion.div  className='cursor-pointer overflow-hidden relative rounded-lg md:rounded-box lg:h-80 lg:w-80 h-48 w-48  '>
+      <motion.div onClick={handleClick} className='cursor-pointer overflow-hidden relative rounded-lg md:rounded-box lg:h-80 lg:w-80 h-48 w-48  '>
         <motion.div 
           onHoverStart={() => setIsHover(true)} 
           onHoverEnd={() => setIsHover(false)} 
