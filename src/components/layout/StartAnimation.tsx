@@ -39,7 +39,7 @@ const logoVariants = {
         <motion.path
           initial={{opacity: 0, x: -20}} 
           animate={{opacity: 1, x: 0}} 
-          transition={{ delay: 1, duration: .5, ease: "easeInOut", type: "spring"}}
+          transition={{ delay: 1, duration: .5, ease: "easeIn", type: "spring"}}
           d="M26 104V48H44.4608L81.0233 85.0192V104H62.5436V93.0111L44.4608 74.9727V104H26Z" 
           fill="#090909"
         />
