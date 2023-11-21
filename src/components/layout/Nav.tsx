@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { PrimaryBox } from '../common/PrimaryBox'
-import { GithubIcon, LinkedinIcon, MenuIcon } from '../icons'
+import { GithubIcon, LinkedinIcon, LogoIcon, MenuIcon } from '../icons'
 import { AnimatePresence, useCycle, useMotionValueEvent, useScroll } from 'framer-motion'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
@@ -65,7 +65,7 @@ const sideVariants = {
 
 const DesktopNavbar = () => (
   <div className='hidden md:flex justify-between items-center  px-5'>
-      <Link href='/#section_header' className='font-semibold text-2xl'>Mario.dev</Link>
+      <Link href='/#section_header' className='font-semibold text-2xl'><LogoIcon/></Link>
     <ol className='flex gap-5 items-center'>
       {navLinks.slice(0,4).map( item=> (
         <Link key={item.name} className='hover:text-primary transition-all' href={item.url}>{item.name}</Link>
@@ -91,7 +91,7 @@ const MobileNavbar = () => {
   return (
   <>
   <div className='flex md:hidden justify-between items-center '>
-    <div className='font-semibold '>Mario.dev</div>
+    <div className='font-semibold '><LogoIcon height="25"/></div>
     <div className='cursor-pointer' onClick={() => cycleOpen()}><MenuIcon/></div>
   </div>
 
