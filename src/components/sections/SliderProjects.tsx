@@ -38,7 +38,7 @@ export const SliderProjects = () => {
             <div className='flex absolute left-0 '>
               <motion.div style={{ x: toLeft }} initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ duration: 1}} className='w-50 flex gap-5 '>
                 {projectList.map(project => (
-                  <ProjectBox key={project.title} title={project.title} image={project.image}/>              
+                  <ProjectBox key={project.title} {...project}/>              
                 ))}
               </motion.div>
             </div>

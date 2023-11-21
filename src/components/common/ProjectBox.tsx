@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 interface Props {
   title: string
   image: StaticImageData
-  urlSite: string
+  urlSite?: string
 }
 
 export const ProjectBox:React.FC<Props> = ({title, image, urlSite}) => {
