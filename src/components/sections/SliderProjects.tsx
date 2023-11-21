@@ -7,12 +7,12 @@ import mmchokersImage from "../../../public/images/mmchokers_project.jpg"
 import MMrealestateImage from "../../../public/images/projects/realstateProject.jpg"
 
 const projectList = [
-  {title: "8bitStore", image:bitstoreImage },
-  {title: "Codeparty", image:codepartyImage },
-  {title: "MMChokers", image:mmchokersImage },
-  {title: "8bitStore2", image:bitstoreImage },
-  {title: "MMrealestate", image:MMrealestateImage },
-  {title: "Codeparty4", image:codepartyImage },
+  {title: "8bitStore", image:bitstoreImage, UrlSite:  null },
+  {title: "Codeparty", image:codepartyImage , UrlSite:  null},
+  {title: "MMChokers", image:mmchokersImage , UrlSite:  null},
+  {title: "8bitStore2", image:bitstoreImage , UrlSite:  null},
+  {title: "MMrealestate", image:MMrealestateImage , UrlSite:  null},
+  {title: "Codeparty4", image:codepartyImage , UrlSite:  null},
 ]
 
 export const SliderProjects = () => {
