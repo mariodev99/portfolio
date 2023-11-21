@@ -22,11 +22,11 @@ export const SliderProjects = () => {
   const toLeft:MotionValue = useTransform(scrollY,[0,2000],[0,-250])
 
   return (
-    <div className='mt-20'>
+    <motion.div  className='mt-20'>
       
       {/* Derecha */}
       <div className='mb-0 md:mb-10 overflow-hidden relative h-60 md:h-80 flex justify-end'>
-              <motion.div style={{ x: toRight }} className=' w-50 flex flex-row-reverse justify-end gap-5 '>
+              <motion.div style={{ x: toRight }} initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ duration: 1}} className=' w-50 flex flex-row-reverse justify-end gap-5 '>
               {projectList.map(project => (
                   <ProjectBox key={project.title} title={project.title} image={project.image}/>              
                 ))}
@@ -36,13 +36,13 @@ export const SliderProjects = () => {
       {/* IZQUIERDA */}
       <div className='overflow-hidden relative w-full h-80 '>
             <div className='flex absolute left-0 '>
-              <motion.div style={{ x: toLeft }} className='w-50 flex gap-5 '>
+              <motion.div style={{ x: toLeft }} initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ duration: 1}} className='w-50 flex gap-5 '>
                 {projectList.map(project => (
                   <ProjectBox key={project.title} title={project.title} image={project.image}/>              
                 ))}
               </motion.div>
             </div>
       </div>
-  </div>
+  </motion.div>
   )
 }

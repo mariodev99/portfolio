@@ -197,9 +197,8 @@ export const Header = () => {
           scale: 1
         }}
         transition={ {
-          duration: 0.7,
+          duration: 1,
           delay: 0.3,
-          type: "spring"
         }}
         className='order-2 lg:order-1 flex justify-center'
       >
@@ -211,7 +210,7 @@ export const Header = () => {
           className='text-center md:text-start text-4xl md:text-8xl font-black tracking-wide '
           initial={{
             opacity: 0,
-            y: -40
+            y: 20
           }}
           animate={{
             opacity: 1,
@@ -227,7 +226,7 @@ export const Header = () => {
         <motion.p 
           initial={{
             opacity: 0,
-            y: -40
+            y: 20
           }}
           animate={{
             opacity: 1,
@@ -235,6 +234,7 @@ export const Header = () => {
           }}
           transition={ {
             duration: 1,
+            delay: 0.3
           }}
           className='mt-5 text-xl font-normal hidden lg:block'
         >
