@@ -64,10 +64,9 @@ export default function StartAnimation() {
   const logoControls = useAnimationControls()
 
   useEffect(() => {
-    logoControls.start({ scale: 1}) 
+    logoControls.start({ scale: 1, opacity: 1, transition: { duration: 0.6, ease: "easeIn"}}) 
     setTimeout(() => {
-      logoControls.start({ scale: 100, x: 1000, y: -800, transition: {  duration: 2} }) 
-
+      logoControls.start({ scale: 100, x: 1000, y: -800, transition: {  duration: 2, ease: "easeOut"} }) 
     }, 3000);
   }, [])
   
@@ -76,7 +75,7 @@ export default function StartAnimation() {
   return (
     <div className='bg-white absolute h-screen w-screen flex justify-center items-center overflow-hidden'>
       <motion.div 
-       initial={{ scale: 0}}
+       initial={{ scale: 0, opacity: 0}}
        animate={logoControls}
       >
         <Logo/>
