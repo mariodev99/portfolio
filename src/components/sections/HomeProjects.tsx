@@ -16,7 +16,7 @@ import ladingProjectImage from "../../../public/images/projects/ladingProject.pn
 import portfolio2ProjectImage from "../../../public/images/projects/portfolio2Image.jpg"
 import { motion } from 'framer-motion'
 import ProjectItem from '../common/ProjectItem'
-import PrimaryButton from '../common/buttons/primaryButton'
+import PrimaryButton from '../common/buttons/PrimaryButton'
 import Link from 'next/link'
 
 export interface projectData {
