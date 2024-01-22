@@ -25,7 +25,7 @@ export default function ContentProjectPage({project}: {project: projectData}) {
           <h3 className={`uppercase `} style={{ color: project?.primaryColor}}>tecnologias</h3>
           <ul className='mt-3'>
             {project?.tecnologies.map(tec => (
-              <li>{tec}</li>
+              <li key={tec}>{tec}</li>
             ))}
           </ul>
         </div>

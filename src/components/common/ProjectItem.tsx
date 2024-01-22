@@ -61,6 +61,7 @@ export default function ProjectItem({title, tecnologies, image}:projectData) {
           <motion.div className='text-2xl md:text-5xl font-[400] overflow-hidden w-full'> 
           {title.split('').map( (letter, index) => (
             <motion.span
+              key={letter}
               className='inline-block' 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1}}

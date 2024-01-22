@@ -234,7 +234,7 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
           >
             <ol className='flex flex-col'>
               {LinkList.map( item => (
-                <NavItem {...item} />
+                <NavItem key={item.title} {...item} />
               ))}
             </ol>
           </motion.div>
