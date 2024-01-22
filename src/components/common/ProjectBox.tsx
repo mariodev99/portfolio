@@ -19,7 +19,7 @@ export const ProjectBox:React.FC<Props> = ({title, image, urlSite}) => {
 
   return (
 
-      <motion.div onClick={handleClick} className='cursor-pointer overflow-hidden relative rounded-lg md:rounded-box lg:h-80 lg:w-80 h-48 w-48  '>
+      <motion.div onClick={handleClick} className='text-white overflow-hidden relative rounded-lg md:rounded-box lg:h-80 lg:w-80 h-48 w-48  '>
         <motion.div 
           onHoverStart={() => setIsHover(true)} 
           onHoverEnd={() => setIsHover(false)} 

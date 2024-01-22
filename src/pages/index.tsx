@@ -4,7 +4,7 @@ import { Header } from '@/components/sections/Header'
 import { SliderProjects } from '@/components/sections/SliderProjects'
 import Nav from '@/components/layout/Nav'
 import { SectionTitle } from '@/components/common/SectionTitle'
-import HomeProjects from '@/components/sections/Projects'
+import HomeProjects from '@/components/sections/HomeProjects'
 import HomeExp from '@/components/sections/HomeExp'
 import HomeSkills from '@/components/sections/HomeSkills'
 import HomeContact from '@/components/sections/HomeContact'
@@ -12,41 +12,44 @@ import HomeAbout from '@/components/sections/HomeAbout'
 import Footer from '@/components/layout/Footer'
 import StartAnimation from '@/components/layout/StartAnimation'
 import { useEffect, useState } from 'react'
+import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   
-  const [endAnimation, setEndAnimation] = useState(false)
+  // const [endAnimation, setEndAnimation] = useState(false)
 
-  useEffect(() => {
-    setTimeout(() => {
-      setEndAnimation(true)
-    }, 4500);
-  }, [])
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setEndAnimation(true)
+  //   }, 4500);
+  // }, [])
   
   return (
-    endAnimation ?  
+    // endAnimation ?  
     <main
-      className={`bg-dark ${inter.className} `}
+      className={`bg-light ${inter.className} `}
     >
+      <Head>
+        <title>Mariodev</title>
+      </Head>
       <Layout>
-          <Header/>
+        <Header/>
       </Layout>
       <SliderProjects/>
       <Layout>
         <>
-          <HomeAbout/>
-          <HomeExp/>
-          <HomeProjects/>
-          <HomeSkills/>
-          <HomeContact/>
+        <HomeAbout/>
+        <HomeExp/>
+        <HomeProjects/>
+        <HomeSkills/>
+        <HomeContact/>
         </>
       </Layout>
-      <Footer/>
+        <Footer/>
     </main> 
-    :           
-    <StartAnimation/>
-
+    // :           
+    // <StartAnimation/>
   )
 }

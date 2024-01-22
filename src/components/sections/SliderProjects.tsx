@@ -41,7 +41,7 @@ export const SliderProjects = () => {
                   <ProjectBox key={project.title} {...project}/>              
                 ))}
               </motion.div>
-            </div>
+            </div> 
       </div>
   </motion.div>
   )

@@ -3,7 +3,6 @@ import { Poppins } from 'next/font/google'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import profileImage1 from "../../../public/images/profile_portfolio.jpg"
-// import profileImage2 from "../../../public/images/profile_white.jpg"
 
 const poppins = Poppins({ weight: ["400","500","900"], subsets: ['latin'], style: "italic"})
 

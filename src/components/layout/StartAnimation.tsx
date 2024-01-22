@@ -65,14 +65,14 @@ export default function StartAnimation() {
     logoControls.start({ borderRadius: "42px", transition: { duration: 1.5 ,  delay: 0.5 , type: "spring"} }) 
     
     setTimeout(() => {
-      logoControls.start({ scale: 100, x: 1000, y: -800, transition: {  duration: 2, ease: "easeOut"} }) 
+      logoControls.start({ scale: 100, x: 1000, y: -800, transition: {  duration: 1.5, ease: "easeInOut"} }) 
     }, 3000);
   }, [])
   
 
 
   return (
-    <div className='bg-white absolute h-screen w-screen flex justify-center items-center overflow-hidden'>
+    <div className='bg-white absolute left-0 z-50 h-screen w-screen flex justify-center items-center overflow-hidden'>
       <motion.div 
         layout
         initial={{ scale: 0, opacity: 0, borderRadius: "999px"}}

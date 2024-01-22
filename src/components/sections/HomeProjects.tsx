@@ -14,17 +14,23 @@ import flashcardsProjectImage from "../../../public/images/projects/flashcardsPr
 import realestateProjectImage from "../../../public/images/projects/realstateProject.jpg"
 import ladingProjectImage from "../../../public/images/projects/ladingProject.png"
 import portfolio2ProjectImage from "../../../public/images/projects/portfolio2Image.jpg"
+import { motion } from 'framer-motion'
+import ProjectItem from '../common/ProjectItem'
+import PrimaryButton from '../common/buttons/primaryButton'
+import Link from 'next/link'
 
-interface projectData {
+export interface projectData {
   title: string
     tecnologies: string[]
     urlGithub: string
     urlSite: string
     description: string
     image: StaticImageData
+    primaryColor: string
+    secundaryColor: string
 }
 
-const list:projectData[] = [
+export const projectsList:projectData[] = [
     {
       title: "Codeparty",
       tecnologies: ["Next.js", "Firebase"],
@@ -32,7 +38,9 @@ const list:projectData[] = [
       urlSite: "https://codeparty-v2.vercel.app/Home",
       description:
         "Red social donde puedes conectarte con otros desarrolladores! Puedes crear tu perfil incluyendo tu stack de tecnologias de una forma divertida, compartir, interactuar y comentar publicaciones.",
-      image: codepartyProjectImage
+      image: codepartyProjectImage,
+      primaryColor: "#159bff",
+      secundaryColor: "#fff"
       },
 
     {
@@ -42,7 +50,9 @@ const list:projectData[] = [
       urlSite: "",
       description:
         "Esta aplicación resuelve un problema de estudio mediante la creación de colecciones de cartas. A su vez estas cartas te ayudaran a aprender conceptos para facilitar el proceso de aprendizaje",
-      image: flashcardsProjectImage
+      image: flashcardsProjectImage,
+      primaryColor: "#1869ff",
+      secundaryColor: "#fff"
       },
       {
         title: "MMChokers",
@@ -51,16 +61,20 @@ const list:projectData[] = [
         urlSite: "https://mmchokers.vercel.app/",
         description:
           "Tienda de accesorios de moda como collares, cadenas pulseras y más! Utiliza mercadopago checkout API para realizar pagos",
-        image: chokersProjectImage
+        image: chokersProjectImage,
+        primaryColor: "#ffd52d",
+        secundaryColor: "#fff"
     },
       {
-        title: "Martin Mariotti Real Estate",
+        title: "RealState",
         tecnologies: ["Next.js", "Tailwind.css"],
         urlGithub: "https://github.com/frontendcafe/air-flashcards",
         urlSite: "https://martinmariotti-realestate.com",
         description:
           "Esta aplicación resuelve un problema de estudio mediante la creación de colecciones de cartas. A su vez estas cartas te ayudaran a aprender conceptos para facilitar el proceso de aprendizaje",
-        image: realestateProjectImage
+        image: realestateProjectImage,
+        primaryColor: "#c0ff3f",
+        secundaryColor: "#fff"
         },
         {
           title: "8bitstore",
@@ -69,7 +83,9 @@ const list:projectData[] = [
           urlSite: "https://8bit-store.vercel.app/",
           description:
             "Tienda de camisetas basado en 8bitfootball. Mira las ultimas camisetas del momento de una forma divertida y elegí tus favoritas!",
-          image: bitProjectImage
+          image: bitProjectImage,
+          primaryColor: "#159bff",
+          secundaryColor: "#fff"
           },
         {
           title: "Home Design Page",
@@ -78,7 +94,9 @@ const list:projectData[] = [
           urlSite: "https://ladingproject1.vercel.app/",
           description:
             "Diseño de una interfaz con animaciones en Figma, pasada a codigo con framer-motion, HTML y CSS",
-          image: ladingProjectImage
+          image: ladingProjectImage,
+          primaryColor: "#159bff",
+          secundaryColor: "#fff"
         },
         {
           title: "Portfolio 2",
@@ -87,45 +105,30 @@ const list:projectData[] = [
           urlSite: "https://mariodev2.vercel.app/",
           description:
             "Anterior portfolio",
-          image: portfolio2ProjectImage
+          image: portfolio2ProjectImage,
+          primaryColor: "#159bff",
+          secundaryColor: "#fff"
         },
 ];
 
+
+
 export default function HomeProjects() {
+
   return (
     <section id='section_proyects' className='my-10 md:my-20'>
     <SectionTitle text='Proyectos'/>
-    <div className='mt-10 flex flex-col gap-10'>
-      {list.slice(0,3).map((project, index) => (
-        <div key={project.title} className='grid grid-cols-1 md:grid-cols-2 items-center gap-5'>
-
-
-          {/* Info */}
-          <div className={`flex flex-col gap-4 items-start`}>
-            <h2 className=' text-2xl md:text-4xl font-semibold'>0{index + 1} - {project.title}</h2>
-            <p className={` text-lg text-gray-200`}>{project.description}</p>
-            <div className='flex gap-4 flex-wrap'>
-              {project.tecnologies.map((item) => (
-                <PrimaryBox key={item} size='sm' text={item}></PrimaryBox>
-              ))}
-            </div>
-            <div className='flex gap-4 md:justify-end'>
-                <a href={project.urlGithub}><GithubIcon/></a>
-                {project.urlSite && <a href={project.urlSite}><SiteIcon/></a>}
-            </div>
-          </div>  
-
-          {/* Image */}
-          <div className={`flex justify-end w-full h-auto md:h-80 `}>
-            <div className='w-full md:w-[80%] h-48 md:h-auto overflow-hidden relative bg-gray-500 rounded-3xl'>
-              <Image className='object-cover' src={project.image} alt='screens del projecto codeparty'/>
-            </div>
-          </div>
-        </div>
+    <div className='mt-10 grid md:grid-cols-2 gap-10'>
+      {projectsList.slice(0,4).map((project, index) => (
+        <ProjectItem key={project.title} {...project} />
       ))}
     </div>
     
-    <h3 className='mt-10 text-lg md:text-3xl'>Otros proyectos</h3>
+    <Link href={"/proyectos"} className='flex justify-center mt-10'>
+      <PrimaryButton text='ver más' primaryColor='#00A3FF'/>
+    </Link>
+
+    {/* <h3 className='mt-10 text-lg md:text-3xl'>Otros proyectos</h3>
 
     <div className='mt-5'>
     <Swiper
@@ -148,13 +151,13 @@ export default function HomeProjects() {
         },
       }}
     >
-      {list.slice(3).map((item:projectData) => (
+      {projectsList.slice(4).map((item:projectData) => (
         <SwiperSlide key={item.title}>
           <ProjectBox {...item} />
         </SwiperSlide>
       ))}
     </Swiper>
-    </div>
+    </div> */}
     </section>
   )
 }

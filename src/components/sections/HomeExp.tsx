@@ -43,7 +43,7 @@ const Experiencie = ({ages, company, position, tasks, index}:experienceData & {i
         {/* item */}
         {index > 0 ?
             <div className='flex justify-center'>
-                <div className={`w-[2px]  bg-white flex items-center relative ${timelineExp.length === index + 1 && "bg-gradient-to-b from-white to-black"}`}>
+                <div className={`w-[2px]  bg-[#2b2e3a] flex items-center relative ${timelineExp.length === index + 1 && "bg-gradient-to-b from-black to-white"}`}>
                     <div className='absolute bg-primary left-[-7px] w-4 h-4 rounded-full'></div>
                 </div>
                 {/* {timelineExp.length === index + 1 &&             
@@ -54,7 +54,7 @@ const Experiencie = ({ages, company, position, tasks, index}:experienceData & {i
 
             : 
             <div className='flex justify-center items-end'>
-                <div className='w-[2px] h-[50%] bg-white flex items-start relative'>
+                <div className='w-[2px] h-[50%] bg-[#2b2e3a] flex items-start relative'>
                     <div className='absolute bg-primary left-[-7px] w-4 h-4 rounded-full'></div>
                 </div>
             </div>
@@ -80,7 +80,7 @@ export default function HomeExp() {
             
             <div className='grid grid-cols-2 md:grid-cols-3 '>
                 <div/>
-                <div className='text-[#777] text-sm md:text-xl mt-1 font-medium flex justify-center'>
+                <div className='text-[#2b2e3a] text-sm md:text-xl mt-1 font-medium flex justify-center'>
                     <p>2020</p>
                 </div>
                 <div/>
