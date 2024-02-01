@@ -44,38 +44,14 @@ const navLinks:navItem[] = [
 const itemVariants = {
   closed: {
     opacity: 0,
-  },
-  open: { opacity: 1 }
-};
-
-const sideVariants = {
-  closed: {
-    transition: {
-      staggerChildren: 0,
-      staggerDirection: 0
-    }
+    y: 50,
+    rotate: 5
   },
   open: {
-    transition: {
-      staggerChildren: 0.2,
-      staggerDirection: 1
-    }
-  }
+    opacity: 1, 
+    y : 0, 
+    rotate: 0  }
 };
-
-const variants = {
-  visible: { 
-    opacity: 1,     
-    transition: {
-      duration: 0.3,
-    },
-  },
-  hidden: { 
-    opacity: 0 
-  },
-  
-};
-
 
 const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
 
@@ -129,75 +105,83 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
       <div className='flex gap-3'>
 
         {/* CV Button */}
+      <Link
+        href="/files/Luciano_Mariotti_CV.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
       <motion.button 
         className='group hidden md:flex px-2.5 py-2.5 rounded-full bg-[#e4e6ef] hover:bg-[#00A3FF] duration-300' 
-      >
+        >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" className='group-hover:stroke-white  duration-300'>
         <path d="M14 3V7C14 7.26522 14.1054 7.51957 14.2929 7.70711C14.4804 7.89464 14.7348 8 15 8H19M14 3H7C6.46957 3 5.96086 3.21071 5.58579 3.58579C5.21071 3.96086 5 4.46957 5 5V19C5 19.5304 5.21071 20.0391 5.58579 20.4142C5.96086 20.7893 6.46957 21 7 21H17C17.5304 21 18.0391 20.7893 18.4142 20.4142C18.7893 20.0391 19 19.5304 19 19V8M14 3L19 8M12 11V17M12 17L9 14M12 17L15 14"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </motion.button>
+        </Link>
 
       {/* Contact Button */}
-      <motion.button 
-            className='hidden md:flex text-white overflow-hidden  items-center gap-2 rounded-full uppercase font-semibold px-3 py-2.5 bg-white'
-            onHoverStart={() => setButtonContactAnimation(true) }
-            onHoverEnd={() => setButtonContactAnimation(false) }
-            animate={{  backgroundColor: buttonContactAnimation ? "#00A3FF" : "#2b2e3a" }}
+      <Link
+        href={"mailto:luciano.mariotti99@gmail.com"}
+      >
+        <motion.button 
+          className='hidden md:flex text-white overflow-hidden  items-center gap-2 rounded-full uppercase font-semibold px-3 py-2.5 bg-white'
+          onHoverStart={() => setButtonContactAnimation(true) }
+          onHoverEnd={() => setButtonContactAnimation(false) }
+          animate={{  backgroundColor: buttonContactAnimation ? "#00A3FF" : "#2b2e3a" }}
+        >
+          <motion.span 
+            animate={{  x: buttonContactAnimation ? 5 : -30 }}
           >
-            <motion.div 
-              className=''
-              animate={{  x: buttonContactAnimation ? 5 : -30 }}
-            >
-           <ArrowRight/>
-            </motion.div>
-            <motion.div
-              animate={{ x: buttonContactAnimation ? 5 : -15}}
-            >
-              Hablemos
-            </motion.div>
+            <ArrowRight/>
+          </motion.span>
+          <motion.span
+            animate={{ x: buttonContactAnimation ? 5 : -15}}
+          >
+          Hablemos
+          </motion.span>
 
-            <motion.div 
-              className={`relative h-1 w-1 rounded-full bg-white`}
-              animate={{ opacity: buttonContactAnimation ? 0 : 1, scale: buttonContactAnimation ? 0 : 1}}
-              transition={{ duration: 0.2}}
-              style={{  x: -10}}
-            />
-      </motion.button>
+          <motion.span 
+            className={`relative h-1 w-1 rounded-full bg-white`}
+            animate={{ opacity: buttonContactAnimation ? 0 : 1, scale: buttonContactAnimation ? 0 : 1}}
+            transition={{ duration: 0.2}}
+            style={{  x: -10}}
+          />
+        </motion.button>
+      </Link>
 
       {/* Menu Button */}
       <motion.button
-            className='text-black overflow-hidden flex items-center gap-2 rounded-full uppercase font-semibold px-4 py-2.5 bg-white'
-            onHoverStart={() => setButtonMenuAnimation(true) }
-            onHoverEnd={() => {
-              !isOpen && setButtonMenuAnimation(false) 
-            } }
-            onClick={() => setIsOpen(!isOpen)}
-            animate={{  backgroundColor: buttonMenuAnimation ? "#fff" : "#e4e6ef" }}
-          >
-            <motion.div
-            >
-              Menu
-            </motion.div>
-            <motion.div 
-              className={`flex gap-1 justify-center  `}
-              animate={{ rotate: buttonMenuAnimation ? 90 : 0}}
-            >
-                <div className='h-1 w-1 bg-black rounded-full'></div>
-                <div className='h-1 w-1 bg-black rounded-full'></div>
-
-            </motion.div>
+        className='text-black overflow-hidden flex items-center gap-2 rounded-full uppercase font-semibold px-4 py-2.5 bg-white'
+        onHoverStart={() => setButtonMenuAnimation(true) }
+        onHoverEnd={() => {
+          !isOpen && setButtonMenuAnimation(false) 
+        }}
+        onClick={() => setIsOpen(!isOpen)}
+        animate={{  backgroundColor: buttonMenuAnimation ? "#fff" : "#e4e6ef" }}
+      >
+        <motion.span>
+          Menu
+        </motion.span>
+        <motion.span 
+          className={`flex gap-1 justify-center  `}
+          animate={{ rotate: buttonMenuAnimation ? 90 : 0}}
+        >
+          <span className='h-1 w-1 bg-black rounded-full'></span>
+          <span className='h-1 w-1 bg-black rounded-full'></span>
+        </motion.span>
       </motion.button> 
       </div>
 
-
-      {/* Menu Desktop */}
+      {/* Menu Desktop  */}
       <motion.div 
         className='hidden md:block h-1 relative pt-2 text-2xl font-medium uppercase '
         animate={{pointerEvents: isOpen ? "visible" : "none"  }}
         >
           <motion.div         
             className=' bg-white rounded-xl py-6 px-1'
-            animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 50, rotate: isOpen ? 0 : 5}}
+            variants={itemVariants}
+            initial={"closed"}
+            animate={isOpen ? "open" : "closed"}
             transition={{ type: "spring", duration: 1}}
           >
             <ol className='flex flex-col'>
@@ -217,22 +201,25 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
             <ArrowRight/>
           </motion.div>
       </motion.div>
-
       </div>
 
     </div>
 
     <div className='flex flex-col gap-4 md:hidden h-2 w-full'> 
+
+    {/* Menu Mobile */}
     <motion.div 
-        className='block md:hidden h-1 relative pt-2 text-2xl font-medium uppercase '
-        animate={{pointerEvents: isOpen ? "visible" : "none"  }}
-        >
-          <motion.div         
-            className=' bg-white rounded-xl py-6 px-1'
-            animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 50, rotate: isOpen ? 0 : 5    }}
-            transition={{ type: "spring", duration: 1}}
-          >
-            <ol className='flex flex-col'>
+      className='block md:hidden h-1 relative pt-2 text-2xl font-medium uppercase '
+      animate={{pointerEvents: isOpen ? "visible" : "none"  }}
+    >
+      <motion.div         
+        className=' bg-white rounded-xl py-6 px-1'
+        variants={itemVariants}
+        initial={{opacity: 0}}
+        animate={isOpen ? "open" : "closed"}
+        transition={{ type: "spring", duration: 1}}
+      >
+        <ol className='flex flex-col'>
               {LinkList.map( item => (
                 <NavItem key={item.title} {...item} />
               ))}
@@ -241,6 +228,7 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
 
           <motion.div         
             className='bg-black text-white rounded-xl p-6 mt-2 flex justify-between items-center'
+            initial={{opacity: 0}}
             animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 50, rotate: isOpen ? 0 : -5    }}
             transition={{ type: "spring", duration: 1}}
           >

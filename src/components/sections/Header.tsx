@@ -185,7 +185,7 @@ const ImageProfileStandard = () => (
 
 export const Header = () => {
   return (
-    <section id='section_header' className='grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center pt-20 md:pt-14 md:mt-10'>
+    <section id='section_header' className='grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center pt-32 md:pt-14 md:mt-10'>
       <motion.div 
         initial={{
           opacity: 0,

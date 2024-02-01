@@ -111,8 +111,6 @@ export const projectsList:projectData[] = [
         },
 ];
 
-
-
 export default function HomeProjects() {
 
   return (
