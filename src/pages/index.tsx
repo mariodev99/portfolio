@@ -10,24 +10,13 @@ import HomeSkills from '@/components/sections/HomeSkills'
 import HomeContact from '@/components/sections/HomeContact'
 import HomeAbout from '@/components/sections/HomeAbout'
 import Footer from '@/components/layout/Footer'
-import StartAnimation from '@/components/layout/StartAnimation'
-import { useEffect, useState } from 'react'
 import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  
-  // const [endAnimation, setEndAnimation] = useState(false)
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setEndAnimation(true)
-  //   }, 4500);
-  // }, [])
-  
+    
   return (
-    // endAnimation ?  
     <main
       className={`bg-light ${inter.className} `}
     >
@@ -49,7 +38,6 @@ export default function Home() {
       </Layout>
         <Footer/>
     </main> 
-    // :           
-    // <StartAnimation/>
+
   )
 }
