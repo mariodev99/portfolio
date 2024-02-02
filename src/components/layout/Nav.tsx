@@ -93,6 +93,27 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
     )
   }
 
+
+  const ResumeButton = () => (
+    
+    <Link
+    href="/files/Luciano_Mariotti_CV.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <motion.div
+      className='bg-black text-white rounded-xl p-6 mt-2 flex justify-between items-center'
+      initial={{opacity: 0}}
+      animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 50, rotate: isOpen ? 0 : -5    }}
+      transition={{ type: "spring", duration: 1}}
+    >
+      <FileDownload stroke={"#fff"} width={"30"} height={"30"} />
+      Resumen
+      <ArrowRight/>
+    </motion.div>
+</Link>
+  )
+
   return (
     <div>
     <div className='flex justify-between items-center'>
@@ -114,7 +135,7 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
         className='group hidden md:flex px-2.5 py-2.5 rounded-full bg-[#e4e6ef] hover:bg-[#00A3FF] duration-300' 
         >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" className='group-hover:stroke-white  duration-300'>
-        <path d="M14 3V7C14 7.26522 14.1054 7.51957 14.2929 7.70711C14.4804 7.89464 14.7348 8 15 8H19M14 3H7C6.46957 3 5.96086 3.21071 5.58579 3.58579C5.21071 3.96086 5 4.46957 5 5V19C5 19.5304 5.21071 20.0391 5.58579 20.4142C5.96086 20.7893 6.46957 21 7 21H17C17.5304 21 18.0391 20.7893 18.4142 20.4142C18.7893 20.0391 19 19.5304 19 19V8M14 3L19 8M12 11V17M12 17L9 14M12 17L15 14"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 3V7C14 7.26522 14.1054 7.51957 14.2929 7.70711C14.4804 7.89464 14.7348 8 15 8H19M14 3H7C6.46957 3 5.96086 3.21071 5.58579 3.58579C5.21071 3.96086 5 4.46957 5 5V19C5 19.5304 5.21071 20.0391 5.58579 20.4142C5.96086 20.7893 6.46957 21 7 21H17C17.5304 21 18.0391 20.7893 18.4142 20.4142C18.7893 20.0391 19 19.5304 19 19V8M14 3L19 8M12 11V17M12 17L9 14M12 17L15 14"  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </motion.button>
         </Link>
@@ -191,54 +212,66 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
             </ol>
           </motion.div>
 
-          <motion.div         
-            className='bg-black text-white rounded-xl p-6 mt-2 flex justify-between items-center'
-            animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 50, rotate: isOpen ? 0 : -5    }}
-            transition={{ type: "spring", duration: 1}}
+          <Link
+            href="/files/Luciano_Mariotti_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <FileDownload stroke={"#fff"} width={"30"} height={"30"} />
-            Resumen
-            <ArrowRight/>
-          </motion.div>
+            <motion.div
+              className='bg-black text-white rounded-xl p-6 mt-2 flex justify-between items-center'
+              initial={{opacity: 0}}
+              animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 50, rotate: isOpen ? 0 : -5    }}
+              transition={{ type: "spring", duration: 1}}
+            >
+              <FileDownload stroke={"#fff"} width={"30"} height={"30"} />
+              Resumen
+              <ArrowRight/>
+            </motion.div>
+        </Link>
       </motion.div>
       </div>
 
-    </div>
+      </div>
 
-    <div className='flex flex-col gap-4 md:hidden h-2 w-full'> 
-
-    {/* Menu Mobile */}
-    <motion.div 
-      className='block md:hidden h-1 relative pt-2 text-2xl font-medium uppercase '
-      animate={{pointerEvents: isOpen ? "visible" : "none"  }}
-    >
-      <motion.div         
-        className=' bg-white rounded-xl py-6 px-1'
-        variants={itemVariants}
-        initial={{opacity: 0}}
-        animate={isOpen ? "open" : "closed"}
-        transition={{ type: "spring", duration: 1}}
-      >
-        <ol className='flex flex-col'>
+      <div className='flex flex-col gap-4 md:hidden h-2 w-full'> 
+      {/* Menu Mobile */}
+        <motion.div
+          className='block md:hidden h-1 relative pt-2 text-2xl font-medium uppercase '
+          animate={{ pointerEvents: isOpen ? "visible" : "none"  }}
+        >
+          <motion.div         
+            className=' bg-white rounded-xl py-6 px-1'
+            variants={itemVariants}
+            initial={{opacity: 0}}
+            animate={isOpen ? "open" : "closed"}
+            transition={{ type: "spring", duration: 1}}
+          >
+            <ol className='flex flex-col'>
               {LinkList.map( item => (
                 <NavItem key={item.title} {...item} />
               ))}
             </ol>
           </motion.div>
-
-          <motion.div         
-            className='bg-black text-white rounded-xl p-6 mt-2 flex justify-between items-center'
-            initial={{opacity: 0}}
-            animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 50, rotate: isOpen ? 0 : -5    }}
-            transition={{ type: "spring", duration: 1}}
+                  
+          <Link
+            href="/files/Luciano_Mariotti_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <FileDownload stroke={"#fff"} width={"30"} height={"30"} />
-            Resumen
-            <ArrowRight/>
-          </motion.div>
-      </motion.div>
-    </div>
-          
+            <motion.div
+              className='bg-black text-white rounded-xl p-6 mt-2 flex justify-between items-center'
+              initial={{opacity: 0}}
+              animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 50, rotate: isOpen ? 0 : -5    }}
+              transition={{ type: "spring", duration: 1}}
+            >
+              <FileDownload stroke={"#fff"} width={"30"} height={"30"} />
+              Resumen
+              <ArrowRight/>
+            </motion.div>
+          </Link>
+
+        </motion.div>
+      </div>
     </div>
 
   )
