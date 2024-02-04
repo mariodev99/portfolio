@@ -11,33 +11,73 @@ import HomeContact from '@/components/sections/HomeContact'
 import HomeAbout from '@/components/sections/HomeAbout'
 import Footer from '@/components/layout/Footer'
 import Head from 'next/head'
+import { motion, useMotionValue, useMotionValueEvent, useScroll, useTransform } from 'framer-motion'
+import AnimationWraperPage from '@/components/layout/AnimationWraperPage'
+import { useEffect, useRef, useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-    
+  const containerRef = useRef(null);
+  const { scrollY } = useScroll();
+  const scrollYMotionValue = useMotionValue(0);
+
+  // Seteo el scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (containerRef.current) {
+        const scrollTop = containerRef.current.scrollTop;
+        scrollYMotionValue.set(scrollTop);
+      }
+    };
+
+    if (containerRef.current) {
+      containerRef.current.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        containerRef.current.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, [scrollYMotionValue]);  
+
   return (
-    <main
-      className={`bg-light ${inter.className} `}
+    <motion.main
+      ref={containerRef}
+      style={{
+        position: "absolute",
+        height: "100vh",
+        width: "100%",
+        overflow: "scroll",
+      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{opacity: 0 }}
+      transition={{
+        duration: 0.5,
+        ease: "easeInOut",
+      }}
     >
-      <Head>
-        <title>Mariodev</title>
-      </Head>
-      <Layout>
-        <Header/>
-      </Layout>
-      <SliderProjects/>
-      <Layout>
-        <>
-        <HomeAbout/>
-        <HomeExp/>
-        <HomeProjects/>
-        <HomeSkills/>
-        <HomeContact/>
-        </>
-      </Layout>
+        <Head>
+          <title>Mariodev</title>
+        </Head>
+        <Layout>
+          <Header/>
+        </Layout>
+        <SliderProjects currentScroll={scrollYMotionValue}/>
+        <Layout>
+          <>
+          <HomeAbout/>
+          <HomeExp/>
+          <HomeProjects/>
+          <HomeSkills/>
+          <HomeContact/>
+          </>
+        </Layout>
         <Footer/>
-    </main> 
+        </motion.main>
+
 
   )
 }

@@ -45,10 +45,10 @@ export default function ProjectItem({title, tecnologies, image}:projectData) {
           onHoverEnd={() => setLetterAnimation(false)}
           onClick={() => router.push(`/proyectos/${title}`)} 
         >
-          <div className='h-42 md:h-64 lg:h-96 rounded-3xl overflow-hidden'>
-              {/* Imagen */}
-              <Image src={image} alt='project image'/>
-          </div>
+          <motion.div className='h-42 md:h-64 lg:h-96 rounded-3xl overflow-hidden' >
+            {/* Imagen */}
+            <Image src={image} alt='project image'/>
+          </motion.div>
           {/* concept • design • development • 3d */}
           <div className='uppercase text-xs my-[1.5em]'>{tecnologies.join(" • ")}</div>
           <div className='flex gap-3 items-center'>
@@ -61,7 +61,7 @@ export default function ProjectItem({title, tecnologies, image}:projectData) {
           <motion.div className='text-2xl md:text-5xl font-[400] overflow-hidden w-full'> 
           {title.split('').map( (letter, index) => (
             <motion.span
-              key={letter}
+              key={index}
               className='inline-block' 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1}}

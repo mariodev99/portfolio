@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ProjectBox } from '../common/ProjectBox'
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
 import bitstoreImage from "../../../public/images/8bit_project.jpg"
@@ -15,14 +15,15 @@ const projectList = [
   {title: "Codeparty4", image:codepartyImage , UrlSite:  null},
 ]
 
-export const SliderProjects = () => {
+export const SliderProjects = ({currentScroll}:{currentScroll: MotionValue}) => {
 
-  const { scrollY } = useScroll()
-  const toRight:MotionValue = useTransform(scrollY,[0,2000],[0,250])
-  const toLeft:MotionValue = useTransform(scrollY,[0,2000],[0,-250])
+  // const {scrollY} = useScroll()
+
+  const toRight:MotionValue = useTransform(currentScroll,[0,2000],[0,250])
+  const toLeft:MotionValue = useTransform(currentScroll,[0,2000],[0,-250])
 
   return (
-    <motion.div  className='mt-20'>
+    <motion.div className='mt-20'>
       
       {/* Derecha */}
       <div className='mb-0 md:mb-10 overflow-hidden relative h-60 md:h-80 flex justify-end'>

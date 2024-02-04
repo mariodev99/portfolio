@@ -185,7 +185,7 @@ const ImageProfileStandard = () => (
 
 export const Header = () => {
   return (
-    <section id='section_header' className='grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center pt-32 md:pt-14 md:mt-10'>
+    <section id='section_header' className='grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center pt-32 md:pt-14 md:mt-10 gap-2'>
       <motion.div 
         initial={{
           opacity: 0,
@@ -204,7 +204,14 @@ export const Header = () => {
         <ImageProfileStandard/>
       </motion.div>
       <div className={`${poppins.className} order-1 lg:order-2`}>
-        <h2 className='my-3 text-center md:hidden text-xl'>Desarrollador Frontend</h2>
+        <motion.h2 
+          className='my-3 text-center md:hidden text-xl' 
+          initial={{ opacity: 0}} 
+          animate={{opacity: 1}}
+          transition={{ delay: 0.5}}
+        >
+        Desarrollador Frontend
+        </motion.h2>
         <motion.h1 
           className='text-center md:text-start text-4xl md:text-8xl font-black tracking-wide '
           initial={{

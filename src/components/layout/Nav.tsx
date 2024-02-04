@@ -74,21 +74,36 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
     },
   ]
 
-  const NavItem = ({title, href}: {title: string, href: string}) => {
+  const NavItem = ({title, href, setIsOpen}: {title: string, href: string, setIsOpen:any}) => {
+
+    const router = useRouter()
+    let actualUrl = router.asPath
+
+    const handleClick = (e:React.MouseEvent, path:string) => {
+      e.preventDefault()
+      
+      if (actualUrl != path) {        
+        setIsOpen(false)
+        router.push(path)
+      }
+     };
+
 
     return (
-      <Link href={href}>
-      <motion.li 
-        className='group px-6 py-3 flex justify-between items-center cursor-pointer rounded-full hover:bg-[#3232]'
-    >
-      {title}
-      <motion.div
-      >
-        <ArrowRight 
-          className="stroke-black opacity-0 w-8 h-8 group-hover:opacity-100 duration-300" 
-        />
-      </motion.div>
-      </motion.li>
+      <Link href={href} onClick={(e) => handleClick(e, href)} className=''>
+        {actualUrl === href ? 
+        <li className='group flex justify-between items-center px-6 py-3 rounded-full cursor-auto'>
+          {title}
+          <div className='h-3 w-3 bg-black rounded-full'></div>
+        </li> 
+        :         
+        <motion.li className='group flex justify-between items-center  cursor-pointer hover:bg-[#3232] px-6 py-3 rounded-full'>
+          {title}
+          <motion.div>
+            <ArrowRight className="stroke-black opacity-0 w-8 h-8 group-hover:opacity-100 duration-300"/>
+          </motion.div>
+        </motion.li>}
+
       </Link>
     )
   }
@@ -100,18 +115,18 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
     href="/files/Luciano_Mariotti_CV.pdf"
     target="_blank"
     rel="noopener noreferrer"
-  >
-    <motion.div
-      className='bg-black text-white rounded-xl p-6 mt-2 flex justify-between items-center'
-      initial={{opacity: 0}}
-      animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 50, rotate: isOpen ? 0 : -5    }}
-      transition={{ type: "spring", duration: 1}}
     >
-      <FileDownload stroke={"#fff"} width={"30"} height={"30"} />
-      Resumen
-      <ArrowRight/>
-    </motion.div>
-</Link>
+      <motion.div
+        className='bg-black text-white rounded-xl p-6 mt-2 flex justify-between items-center'
+        initial={{opacity: 0}}
+        animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 50, rotate: isOpen ? 0 : -5    }}
+        transition={{ type: "spring", duration: 1}}
+      >
+        <FileDownload stroke={"#fff"} width={"30"} height={"30"} />
+        Resumen
+        <ArrowRight/>
+      </motion.div>
+    </Link>
   )
 
   return (
@@ -197,7 +212,7 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
       <motion.div 
         className='hidden md:block h-1 relative pt-2 text-2xl font-medium uppercase '
         animate={{pointerEvents: isOpen ? "visible" : "none"  }}
-        >
+      >
           <motion.div         
             className=' bg-white rounded-xl py-6 px-1'
             variants={itemVariants}
@@ -207,7 +222,7 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
           >
             <ol className='flex flex-col'>
               {LinkList.map( item => (
-                <NavItem key={item.title} {...item} />
+                <NavItem setIsOpen={setIsOpen} key={item.title} {...item} />
               ))}
             </ol>
           </motion.div>
@@ -240,7 +255,7 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
           animate={{ pointerEvents: isOpen ? "visible" : "none"  }}
         >
           <motion.div         
-            className=' bg-white rounded-xl py-6 px-1'
+            className='bg-white rounded-xl py-6 px-1'
             variants={itemVariants}
             initial={{opacity: 0}}
             animate={isOpen ? "open" : "closed"}
@@ -248,11 +263,10 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
           >
             <ol className='flex flex-col'>
               {LinkList.map( item => (
-                <NavItem key={item.title} {...item} />
+                <NavItem setIsOpen={setIsOpen} key={item.title} {...item} />
               ))}
             </ol>
           </motion.div>
-                  
           <Link
             href="/files/Luciano_Mariotti_CV.pdf"
             target="_blank"
@@ -269,7 +283,6 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
               <ArrowRight/>
             </motion.div>
           </Link>
-
         </motion.div>
       </div>
     </div>
