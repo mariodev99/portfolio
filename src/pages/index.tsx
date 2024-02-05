@@ -18,26 +18,31 @@ import { useEffect, useRef, useState } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
   const scrollYMotionValue = useMotionValue(0);
 
   // Seteo el scroll
   useEffect(() => {
+
+    const container = containerRef.current;
+
     const handleScroll = () => {
-      if (containerRef.current) {
-        const scrollTop = containerRef.current.scrollTop;
-        scrollYMotionValue.set(scrollTop);
+      if (container) {
+        const scrollTop = container.scrollTop;
+        if (scrollYMotionValue) {
+          scrollYMotionValue.set(scrollTop);
+        }
       }
     };
 
-    if (containerRef.current) {
-      containerRef.current.addEventListener('scroll', handleScroll);
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
     }
 
     return () => {
-      if (containerRef.current) {
-        containerRef.current.removeEventListener('scroll', handleScroll);
+      if (container) {
+        container.removeEventListener('scroll', handleScroll);
       }
     };
   }, [scrollYMotionValue]);  
@@ -76,8 +81,6 @@ export default function Home() {
           </>
         </Layout>
         <Footer/>
-        </motion.main>
-
-
+      </motion.main>
   )
 }
