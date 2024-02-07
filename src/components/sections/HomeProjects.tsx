@@ -123,7 +123,7 @@ export default function HomeProjects() {
     </div>
     
     <Link href={"/proyectos"} className='flex justify-center mt-10'>
-      <PrimaryButton text='ver más' primaryColor='#00A3FF'/>
+      <PrimaryButton text='VER MÁS' primaryColor='#00A3FF' secundaryColor="#fff"/>
     </Link>
 
     {/* <h3 className='mt-10 text-lg md:text-3xl'>Otros proyectos</h3>

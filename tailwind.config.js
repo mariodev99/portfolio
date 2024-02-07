@@ -16,7 +16,7 @@ module.exports = {
 
         // Theme 2
         light: "#f0f1fa",
-        dark: "#2b2e3a",
+        dark: "#121212",
         primary: "#00A3FF",
 
         // primary: "#00A3FF",

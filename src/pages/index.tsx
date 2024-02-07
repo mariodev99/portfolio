@@ -11,7 +11,7 @@ import HomeContact from '@/components/sections/HomeContact'
 import HomeAbout from '@/components/sections/HomeAbout'
 import Footer from '@/components/layout/Footer'
 import Head from 'next/head'
-import { motion, useMotionValue, useMotionValueEvent, useScroll, useTransform } from 'framer-motion'
+import { MotionValue, motion, useMotionValue, useMotionValueEvent, useScroll, useTransform } from 'framer-motion'
 import AnimationWraperPage from '@/components/layout/AnimationWraperPage'
 import { useEffect, useRef, useState } from 'react'
 
@@ -19,8 +19,9 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll();
   const scrollYMotionValue = useMotionValue(0);
+
+  const contactSectionPosition:MotionValue = useTransform(scrollYMotionValue,[3600,4700],[300,0])
 
   // Seteo el scroll
   useEffect(() => {
@@ -55,6 +56,7 @@ export default function Home() {
         height: "100vh",
         width: "100%",
         overflow: "scroll",
+        overflowX: "hidden"
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -77,10 +79,19 @@ export default function Home() {
           <HomeExp/>
           <HomeProjects/>
           <HomeSkills/>
-          <HomeContact/>
           </>
         </Layout>
-        <Footer/>
+        <motion.div 
+          className='bg-white rounded-t-[60px] py-5 shadow-2xl'
+          style={{ y: contactSectionPosition}}
+        >
+          <Layout>
+            <>
+            <HomeContact currentScroll={scrollYMotionValue}/>
+            <Footer/>
+            </>
+          </Layout>
+        </motion.div>
       </motion.main>
   )
 }

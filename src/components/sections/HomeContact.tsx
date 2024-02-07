@@ -1,7 +1,10 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useState } from 'react'
 import { ArrowRight, EmailIcon, GithubIcon, LinkedinIcon } from '../icons'
 import { SectionTitle } from '../common/SectionTitle'
-import { motion } from 'framer-motion'
+import { MotionValue, motion, useTransform } from 'framer-motion'
+import PrimaryButton from '../common/buttons/PrimaryButton'
+import Image from 'next/image'
+import selim_image from "@/../public/images/selim.png"
 
 interface contactItems {
   url: string
@@ -27,30 +30,57 @@ const contactItems:contactItems[] = [
   },
 ]
 
-export default function HomeContact() {
+export default function HomeContact({currentScroll}:{currentScroll: MotionValue}) {
+
+
+  const dogScale:MotionValue = useTransform(currentScroll,[4300,4800],[0,1])
+
   return (
     <section id='section_contact' className='my-20 flex flex-col items-center'>
       <SectionTitle text='Contacto'/>
-      <p className='text-center mt-5 text-lg'>Mi bandeja de entrada siempre esta abierta para cualquier consulta que quieras hacerme.</p>
-      
-      <div className=' flex flex-col items-center gap-3 mt-10 text-sm md:text-4xl'>
+
+        <p className='text-center mt-5 text-xl font-medium'>Mi bandeja de entrada siempre esta abierta para cualquier consulta que quieras hacerme.</p>
+      {/* Imagen de Selim */}
+      <motion.div
+        style={{ position: "absolute", x: 500, y: 350, scale: dogScale}}
+        // TODO: responsive
+        animate={{
+          y: [400, 350, 400], // Animación de elevación y descenso
+          rotate: [0, 10, -10, 0], // Animación de rotación
+        }}
+        transition={{
+          y: {
+            duration: 2,
+            repeat: Infinity, // Repetir infinitamente
+            repeatType: 'reverse', // Invertir la animación al repetir
+            ease: 'easeInOut',
+          },
+          rotate: {
+            duration: 4,
+            repeat: Infinity, // Repetir infinitamente
+            repeatType: 'reverse', // Invertir la animación al repetir
+            ease: 'easeInOut',
+          },
+        }}
+
+      >
+        <Image src={selim_image} alt='Perro de Luciano Mariotti'/>
+      </motion.div>
+      <div className=' flex flex-col items-center mt-10 text-sm md:text-4xl'>
         {contactItems.map( item => (
           <motion.a 
             href={item.url}
             target="_blank" 
             key={item.url} 
             className='group'
-            // whileHover={{ scale: 1.2, color: "#00A3FF"}}
+            initial={{y: 30}}
+            whileInView={{ y:0}}
+            transition={{ duration: 0.5}}
           >                    
-            <div className='flex items-center gap-2 group-hover:scale-125 ease-in duration-200 group-hover:text-[#00A3FF]'>
-              <p>{item.text}</p>
-              <div className='mt-1'>
-                <ArrowRight width={24} height={24} className={"stroke-black group-hover:stroke-[#00A3FF] group-hover:rotate-[-45deg] group-hover:scale-150 ease-in duration-200"}  />
-              </div>
-            </div>
+            <PrimaryButton text={item.text} primaryColor='#fff' secundaryColor="#121212"  />
+            {/* <SecundaryButton text={item.text} primaryColor='#00A3FF' secundaryColor='#2b2e3a'/> */}
           </motion.a>
         ))}
-
       </div>
     </section>
   )

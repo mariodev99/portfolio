@@ -68,7 +68,7 @@ const Experiencie = ({ages, company, position, tasks, index}:experienceData & {i
 
 export default function HomeExp() {
   return (
-    <section id='section_experience' className='my-10 md:my-20'>
+    <section id='experience' className='my-10 md:my-20'>
         <SectionTitle text='Experiencia'/>
         
         <div className='mt-5'>

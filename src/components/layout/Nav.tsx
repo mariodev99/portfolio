@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { projectsList } from '../sections/HomeProjects'
 import { Layout } from '.'
+import SecundaryButton from '../common/buttons/SecundaryButton'
 
 // OBJETO LINK DE NAVEGACION
 interface navItem {
@@ -159,30 +160,7 @@ const DesktopNavbar = ({logoPrimaryColor}:{logoPrimaryColor: string}) => {
       <Link
         href={"mailto:luciano.mariotti99@gmail.com"}
       >
-        <motion.button 
-          className='hidden md:flex text-white overflow-hidden  items-center gap-2 rounded-full uppercase font-semibold px-3 py-2.5 bg-white'
-          onHoverStart={() => setButtonContactAnimation(true) }
-          onHoverEnd={() => setButtonContactAnimation(false) }
-          animate={{  backgroundColor: buttonContactAnimation ? "#00A3FF" : "#2b2e3a" }}
-        >
-          <motion.span 
-            animate={{  x: buttonContactAnimation ? 5 : -30 }}
-          >
-            <ArrowRight/>
-          </motion.span>
-          <motion.span
-            animate={{ x: buttonContactAnimation ? 5 : -15}}
-          >
-          Hablemos
-          </motion.span>
-
-          <motion.span 
-            className={`relative h-1 w-1 rounded-full bg-white`}
-            animate={{ opacity: buttonContactAnimation ? 0 : 1, scale: buttonContactAnimation ? 0 : 1}}
-            transition={{ duration: 0.2}}
-            style={{  x: -10}}
-          />
-        </motion.button>
+        <SecundaryButton text={"HABLEMOS"} primaryColor='#00A3FF' secundaryColor='#121212'/>
       </Link>
 
       {/* Menu Button */}

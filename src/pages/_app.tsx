@@ -24,7 +24,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     endAnimation ?  
     <>
-
       <Nav/>
       <AnimatePresence mode='wait'>
         <Component key={router.pathname} {...pageProps} />
