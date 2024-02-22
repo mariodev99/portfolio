@@ -15,13 +15,17 @@ import { MotionValue, motion, useMotionValue, useMotionValueEvent, useScroll, us
 import AnimationWraperPage from '@/components/layout/AnimationWraperPage'
 import { useEffect, useRef, useState } from 'react'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollYMotionValue = useMotionValue(0);
 
   const contactSectionPosition:MotionValue = useTransform(scrollYMotionValue,[3600,4700],[300,0])
+
+  const scrollToTop = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   // Seteo el scroll
   useEffect(() => {
@@ -81,14 +85,15 @@ export default function Home() {
           <HomeSkills/>
           </>
         </Layout>
-        <motion.div 
+        <motion.div
+          id='contact'
           className='bg-white rounded-t-[60px] py-5 shadow-2xl'
           style={{ y: contactSectionPosition}}
         >
           <Layout>
             <>
             <HomeContact currentScroll={scrollYMotionValue}/>
-            <Footer/>
+            <Footer containerRef={containerRef}/>
             </>
           </Layout>
         </motion.div>

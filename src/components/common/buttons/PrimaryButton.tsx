@@ -4,16 +4,16 @@ import { ArrowUpRightCircle } from '@/components/icons'
 
 
 
-export default function PrimaryButton({text, primaryColor, secundaryColor}: {text:string, primaryColor: string, secundaryColor:string}) {
+export default function PrimaryButton({text, primary_color, secundary_color}: {text:string, primary_color: string, secundary_color:string}) {
   
   const textVariants = {
     "on_hover": {
       x: -10,
-      color: secundaryColor
+      color: secundary_color
     },
     "normal": {
       x: 10,
-      color: primaryColor
+      color: primary_color
     }
   }
 
@@ -32,14 +32,14 @@ export default function PrimaryButton({text, primaryColor, secundaryColor}: {tex
 
   return (
     <motion.button 
-      className='overflow-hidden flex items-center mt-10 py-3 gap-3 rounded-full font-semibold px-5 py-2 shadow-lg'
-      animate={{ backgroundColor: secundaryColor}}
+      className='overflow-hidden flex items-center py-3 gap-3 rounded-full font-semibold px-5 py-2 shadow-lg'
+      animate={{ backgroundColor: secundary_color}}
       onHoverStart={() => setButtonAnimation(true) }
       onHoverEnd={() => setButtonAnimation(false) }
     >
       <motion.div 
         className={`relative h-2 w-2 rounded-full `}
-        style={{ backgroundColor: primaryColor, x: 10}}
+        style={{ backgroundColor: primary_color, x: 10}}
         animate={{  scale: buttonAnimation ? 150 : 1}}
         transition={{ duration: 0.4}}
       />
@@ -54,7 +54,7 @@ export default function PrimaryButton({text, primaryColor, secundaryColor}: {tex
         initial={{ x: -10}}
         animate={buttonAnimation ? "on_hover" : "normal"}
       >
-        <ArrowUpRightCircle stroke={primaryColor} fill={secundaryColor} />
+        <ArrowUpRightCircle stroke={primary_color} fill={secundary_color} />
       </motion.div>
     </motion.button>
   )

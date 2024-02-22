@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight } from '@/components/icons'
 
-export default function SecundaryButton({text, primaryColor, secundaryColor}:{ text:string, primaryColor: string, secundaryColor: string}) {
+export default function SecundaryButton({text, primary_color, secundary_color}:{ text:string, primary_color: string, secundary_color: string}) {
 
     const [buttonAnimation, setButtonAnimation] = useState(false)
 
@@ -11,7 +11,7 @@ export default function SecundaryButton({text, primaryColor, secundaryColor}:{ t
         className='hidden md:flex text-white overflow-hidden  items-center gap-2 rounded-full font-semibold px-3 py-2.5 bg-white'
         onHoverStart={() => setButtonAnimation(true) }
         onHoverEnd={() => setButtonAnimation(false) }
-        animate={{  backgroundColor: buttonAnimation ? primaryColor : secundaryColor }}
+        animate={{  backgroundColor: buttonAnimation ? primary_color : secundary_color }}
     >
     <motion.span 
       animate={{  x: buttonAnimation ? 5 : -30 }}

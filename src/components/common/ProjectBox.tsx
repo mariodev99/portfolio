@@ -6,15 +6,15 @@ import { useRouter } from 'next/router'
 interface Props {
   title: string
   image: StaticImageData
-  urlSite?: string
+  url_site?: string
 }
 
-export const ProjectBox:React.FC<Props> = ({title, image, urlSite}) => {
+export const ProjectBox:React.FC<Props> = ({title, image, url_site}) => {
   const [isHover, setIsHover] = useState(false)
   const router = useRouter()
 
   const handleClick = () => {
-    urlSite && router.push(urlSite)
+    url_site && router.push(url_site)
   }
 
   return (

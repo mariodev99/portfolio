@@ -1,9 +1,19 @@
+import { motion } from "framer-motion";
+
 interface Props {
-    text: string
+  text: string;
 }
 
-export const SectionTitle = ({text}:Props) => {
+export const SectionTitle = ({ text }: Props) => {
   return (
-    <div className='text-[8vw] font-medium '>{text}</div>
-  )
-}
+    <motion.h3
+      className="text-5xl md:text-[8vw] font-medium"
+      initial={{ y: 100 }}
+      whileInView={{ y: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+    >
+      {text}
+    </motion.h3>
+  );
+};
