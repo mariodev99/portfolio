@@ -1,6 +1,5 @@
 import { DocumentData, collection, getDocs } from "firebase/firestore"; 
 import {firestore} from "@/firebase/config"
-import { projectData } from "@/components/sections/HomeProjects";
 import { ProjectDataType } from "@/types";
 
 export const getProjects = async (): Promise<ProjectDataType[]> => {
