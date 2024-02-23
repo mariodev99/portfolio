@@ -39,7 +39,9 @@ export default function ContentProjectPage({
       transition={{ duration: 1 }}
     >
       <motion.div className="">
-        <h1 className="text-7xl mb-10 capitalize">{project?.title}</h1>
+        <h1 className="text-6xl md:text-7xl mb-10 capitalize">
+          {project?.title}
+        </h1>
         <motion.div
           className="flex flex-col md:flex-row gap-10"
           initial={{ y: 10 }}

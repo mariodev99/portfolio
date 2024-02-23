@@ -188,7 +188,7 @@ const DesktopNavbar = ({ logoPrimaryColor }: { logoPrimaryColor: string }) => {
 
             {/* Menu Button */}
             <motion.button
-              className="text-black overflow-hidden flex items-center gap-2 rounded-full uppercase font-semibold px-4 py-2.5 bg-white"
+              className="text-black overflow-hidden flex items-center gap-2 rounded-full uppercase font-semibold  px-4 py-4 md:py-2.5 bg-white"
               onHoverStart={() => setButtonMenuAnimation(true)}
               onHoverEnd={() => {
                 !isOpen && setButtonMenuAnimation(false);
@@ -198,7 +198,7 @@ const DesktopNavbar = ({ logoPrimaryColor }: { logoPrimaryColor: string }) => {
                 backgroundColor: buttonMenuAnimation ? "#fff" : "#e4e6ef",
               }}
             >
-              <motion.span>Menu</motion.span>
+              <motion.span className="hidden md:block">Menu</motion.span>
               <motion.span
                 className={`flex gap-1 justify-center  `}
                 animate={{ rotate: buttonMenuAnimation ? 90 : 0 }}

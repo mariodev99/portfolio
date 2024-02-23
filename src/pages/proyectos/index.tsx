@@ -11,7 +11,9 @@ export default function ProjectPage() {
     <AnimationWraperPage>
       <Layout>
         <div className="py-32 md:py-20">
-          <h1 className="text-[10vw] font-semibold">Proyectos</h1>
+          <h1 className="text-[50px] md:text-[100px] lg:text-[200px] font-semibold">
+            Proyectos
+          </h1>
           <div className="mt-10 grid md:grid-cols-2 gap-10">
             {projectsFromContext.map((project, index) => (
               <ProjectItem key={project.title} {...project} />

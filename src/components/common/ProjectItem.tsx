@@ -45,7 +45,14 @@ export default function ProjectItem({ title, tecnologies, cover_image }: any) {
       onHoverEnd={() => setLetterAnimation(false)}
       onClick={() => handleRedirect()}
     >
-      <motion.div className="h-[200px] md:h-64 lg:h-96 rounded-3xl relative overflow-hidden ">
+      <motion.div
+        className="h-[200px] md:h-64 lg:h-96 rounded-3xl relative overflow-hidden "
+        animate={{
+          filter: letterAnimation
+            ? ["blur(0px)", "blur(3px)", "blur(0px)"]
+            : "blur(0px)",
+        }}
+      >
         {/* Imagen */}
         <Image
           className="object-cover"
@@ -54,11 +61,14 @@ export default function ProjectItem({ title, tecnologies, cover_image }: any) {
           alt="project image"
         />
       </motion.div>
-      {/* concept • design • development • 3d */}
+      {/* tecnologia • tecnologia • tecnologia • tecnologia */}
       <div className="uppercase text-xs my-[1.5em]">
         {tecnologies.join(" • ")}
       </div>
+
+      {/* Titulo */}
       <div className="flex gap-3 items-end">
+        {/* Flecha */}
         <motion.div
           className="absolute "
           animate={{
@@ -68,6 +78,8 @@ export default function ProjectItem({ title, tecnologies, cover_image }: any) {
         >
           <ArrowIcon />
         </motion.div>
+
+        {/* Animacion de titulo */}
         <motion.div className="text-2xl md:text-5xl font-[400] overflow-hidden w-full ">
           {title.split("").map((letter: string, index: number) => (
             <motion.span
