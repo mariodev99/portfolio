@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export const GithubIcon = (props) => {
+export const GithubIcon = (props: any) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
