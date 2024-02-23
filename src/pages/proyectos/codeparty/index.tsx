@@ -1,9 +1,8 @@
-import ContentProjectPage from "@/components/common/ContentProjectPage";
 import { Layout } from "@/components/layout";
+import ContentProjectPage from "@/components/common/ContentProjectPage";
 import { usePortfolioContext } from "@/context/dataContext";
-import React from "react";
 
-export default function Pagina() {
+export default function CodepartyPage() {
   const { projectsFromContext } = usePortfolioContext();
 
   const project = projectsFromContext?.filter(

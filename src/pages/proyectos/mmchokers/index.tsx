@@ -1,13 +1,12 @@
 import { Layout } from "@/components/layout";
-import React from "react";
 import ContentProjectPage from "@/components/common/ContentProjectPage";
 import { usePortfolioContext } from "@/context/dataContext";
 
-export default function RealStatePage() {
+export default function ChokersPage() {
   const { projectsFromContext } = usePortfolioContext();
 
   const project = projectsFromContext?.filter(
-    (project) => project.title === "realstate"
+    (project) => project.title === "mmchokers"
   )[0];
 
   return (
