@@ -8,7 +8,7 @@ import { usePortfolioContext } from "@/context/dataContext";
 export default function CodepartyPage() {
   const { projectsFromContext } = usePortfolioContext();
 
-  const project = projectsFromContext.filter(
+  const project = projectsFromContext?.filter(
     (project) => project.title === "codeparty"
   )[0];
 

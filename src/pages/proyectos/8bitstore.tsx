@@ -8,7 +8,7 @@ import { usePortfolioContext } from "@/context/dataContext";
 export default function BitstorePage() {
   const { projectsFromContext } = usePortfolioContext();
 
-  const project = projectsFromContext.filter(
+  const project = projectsFromContext?.filter(
     (project) => project.title === "8bitstore"
   )[0];
 

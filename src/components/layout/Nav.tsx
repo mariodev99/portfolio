@@ -319,9 +319,6 @@ export default function Nav() {
       (item) => item.title === lastPart
     )[0].primary_color;
   }
-  //  else {
-  //   setBackButtonVisible(false);
-  // }
 
   return (
     <motion.div

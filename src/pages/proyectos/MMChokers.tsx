@@ -7,7 +7,7 @@ import { usePortfolioContext } from "@/context/dataContext";
 export default function ChokersPage() {
   const { projectsFromContext } = usePortfolioContext();
 
-  const project = projectsFromContext.filter(
+  const project = projectsFromContext?.filter(
     (project) => project.title === "mmchokers"
   )[0];
 
