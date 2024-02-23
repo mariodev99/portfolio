@@ -35,7 +35,9 @@ export default function Footer({ containerRef }: FooterProps) {
       </div> */}
       <div className="grid grid-cols-3 items-center">
         <p className=" text-sm md:text-lg font-medium">Luciano Mariotti</p>
-        <div className="flex hidden md:flex gap-3 justify-center text-xs"></div>
+        <div className="flex hidden md:flex gap-3 justify-center text-xs">
+          Hecho con ♥
+        </div>
         <div className="flex justify-end">
           <button
             onClick={scrollToTop}
