@@ -15,22 +15,6 @@ export default function ContentProjectPage({
 
   const router = useRouter();
 
-  // const ImageGallery = ({ image_src }: string) => (
-  //   <motion.div
-  //     className="relative overflow-hidden rounded-3xl h-44 md:h-96 w-full mt-10 "
-  //     initial={{ scale: 0 }}
-  //     animate={{ scale: 1 }}
-  //     transition={{ duration: 1 }}
-  //   >
-  //     <Image
-  //       src={image_src}
-  //       alt="imagenes del proyecto codeparty"
-  //       className="object-cover "
-  //       layout="fill"
-  //     />
-  //   </motion.div>
-  // );
-
   return (
     <motion.div
       className="mt-32 grid grid-cols-1 md:grid-cols-2 gap-4 py-5 "
@@ -131,9 +115,6 @@ export default function ContentProjectPage({
           layout="fill"
         />
       </motion.div>
-      {/* {project?.images.map((image) => (
-        <ImageGallery key={image} image_src={image} />
-      ))} */}
     </motion.div>
   );
 }

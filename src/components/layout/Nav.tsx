@@ -310,14 +310,12 @@ export default function Nav() {
     actualRoute != "/proyectos" &&
     actualRoute != "/contacto"
   ) {
-    // setBackButtonVisible(true);
-
     const routeParts = actualRoute.split("/");
     const lastPart = routeParts[routeParts.length - 1];
 
-    logoPrimaryColor = projectsFromContext?.filter(
-      (item) => item.title === lastPart
-    )[0].primary_color;
+    // logoPrimaryColor = projectsFromContext?.filter(
+    //   (item) => item.title === lastPart
+    // )[0].primary_color;
   }
 
   return (
