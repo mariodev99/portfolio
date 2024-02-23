@@ -9,13 +9,10 @@ interface FooterProps {
 export default function Footer({ containerRef }: FooterProps) {
   const scrollToTop = () => {
     if (containerRef.current) {
-      console.log(containerRef.current);
-      containerRef.current.scrollIntoView({
+      containerRef.current.scrollTo({
+        top: 0,
         behavior: "smooth",
-        block: "nearest",
-        inline: "start",
       });
-      // containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 

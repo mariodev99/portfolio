@@ -19,10 +19,15 @@ export default function ContactoPage() {
         >
           <SectionTitle text="Contacto" />
 
-          <p className="text-center mt-5 text-md md:text-xl font-medium">
+          <motion.p
+            initial={{ y: 70 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1 }}
+            className="text-center mt-5 text-md md:text-xl font-medium"
+          >
             Mi bandeja de entrada siempre esta abierta para cualquier consulta
             que quieras hacerme.
-          </p>
+          </motion.p>
           {/* Imagen de Selim */}
           <motion.div
             style={{
