@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { PrimaryBox } from "../common/PrimaryBox";
 import {
   ArrowIcon,
+  ArrowLeft,
   ArrowRight,
   ArrowUpRightCircle,
   FileDownload,
@@ -61,7 +62,15 @@ const itemVariants = {
   },
 };
 
-const DesktopNavbar = ({ logoPrimaryColor }: { logoPrimaryColor: string }) => {
+const DesktopNavbar = ({
+  logoPrimaryColor,
+  backButtonVisible,
+  handleBack,
+}: {
+  logoPrimaryColor: string;
+  backButtonVisible: boolean;
+  handleBack: () => void;
+}) => {
   const [buttonMenuAnimation, setButtonMenuAnimation] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -141,6 +150,17 @@ const DesktopNavbar = ({ logoPrimaryColor }: { logoPrimaryColor: string }) => {
   //   </Link>
   // );
 
+  const backButtonVariables = {
+    show: {
+      y: 0,
+      opacity: 1,
+    },
+    hidden: {
+      y: 20,
+      opacity: 0,
+    },
+  };
+
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -151,13 +171,29 @@ const DesktopNavbar = ({ logoPrimaryColor }: { logoPrimaryColor: string }) => {
         <div>
           {/* Botonera */}
           <div className="flex gap-3">
+            <motion.button
+              className="mr-0 md:mr-6 bg-white rounded-full px-2.5 md:px-4 py-2.5 flex gap-2 items-center group "
+              variants={backButtonVariables}
+              style={{ pointerEvents: backButtonVisible ? "all" : "none" }}
+              animate={backButtonVisible ? "show" : "hidden"}
+              transition={{ duration: 0.6 }}
+              onClick={handleBack}
+            >
+              <ArrowLeft
+                className={`group-hover:stroke-primary transition-all duration-200`}
+              />
+              <p className="hidden md:block uppercase font-semibold group-hover:text-primary transition-all duration-200 ">
+                Atras
+              </p>
+            </motion.button>
+
             {/* CV Button */}
             <Link
               href="/files/Luciano_Mariotti_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <motion.button className="group hidden md:flex px-2.5 py-2.5 rounded-full bg-[#e4e6ef] hover:bg-[#00A3FF] duration-300">
+              <motion.button className="group hidden md:flex p-2.5 rounded-full bg-[#e4e6ef] hover:bg-[#00A3FF] duration-300">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -301,7 +337,9 @@ export default function Nav() {
 
   const router = useRouter();
   const actualRoute = router.pathname;
-  // const [backButtonVisible, setBackButtonVisible] = useState(false);
+  const [backButtonVisible, setBackButtonVisible] = useState(false);
+
+  const handleBack = () => router.back();
 
   let logoPrimaryColor = "#000";
 
@@ -318,6 +356,18 @@ export default function Nav() {
     )[0].primary_color;
   }
 
+  useEffect(() => {
+    if (
+      actualRoute != "/" &&
+      actualRoute != "/proyectos" &&
+      actualRoute != "/contacto"
+    ) {
+      setBackButtonVisible(true);
+    } else {
+      setBackButtonVisible(false);
+    }
+  }, [actualRoute]);
+
   return (
     <motion.div
       className="fixed w-full z-50"
@@ -328,7 +378,11 @@ export default function Nav() {
       <Layout>
         <motion.div className="w-full py-5 md:py-2 mt-5">
           {logoPrimaryColor && (
-            <DesktopNavbar logoPrimaryColor={logoPrimaryColor} />
+            <DesktopNavbar
+              handleBack={handleBack}
+              backButtonVisible={backButtonVisible}
+              logoPrimaryColor={logoPrimaryColor}
+            />
           )}
         </motion.div>
       </Layout>
