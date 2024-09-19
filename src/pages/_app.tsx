@@ -8,28 +8,16 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [endAnimation, setEndAnimation] = useState(false);
 
   const router = useRouter();
 
-  useEffect(() => {
-    setTimeout(() => {
-      setEndAnimation(true);
-    }, 4500);
-  }, []);
-
   return (
     <PortfolioProvider>
-      {endAnimation ? (
-        <>
+          <StartAnimation />
           <Nav />
           <AnimatePresence mode="wait">
             <Component key={router.pathname} {...pageProps} />
           </AnimatePresence>
-        </>
-      ) : (
-        <StartAnimation />
-      )}
     </PortfolioProvider>
   );
 }

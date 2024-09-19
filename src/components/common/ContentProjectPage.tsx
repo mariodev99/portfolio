@@ -53,7 +53,7 @@ export default function ContentProjectPage({
         <div className="flex items-center gap-5 mt-10">
           {project.url_site && (
             <motion.button
-              className="overflow-hidden flex  py-3 items-center gap-3 rounded-full uppercase font-semibold px-5 py-2 bg-white shadow-lg text-[#159bff]"
+              className="overflow-hidden flex items-center gap-3 rounded-full uppercase font-semibold px-5 py-2 bg-white shadow-lg text-[#159bff]"
               onHoverStart={() => setButtonAnimation(true)}
               onHoverEnd={() => setButtonAnimation(false)}
               onClick={() => router.push(project.url_site)}
