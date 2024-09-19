@@ -18,14 +18,14 @@ const timelineExp:experienceData[] = [
     {
         company: "IF Soluciones",
         position: "Desarrollador Frontend",
-        ages: "2022 - 2023",
-        tasks: "Identificar y resolver problemas técnicos o errores que puedan surgir en la interfaz de usuario. Desarrollo de componentes reutilizables. Implementación de diseños de interfaz de usuario. Mantenimiento y soporte",
+        ages: "2022 - 2024",
+        tasks: "Como desarrollador frontend identifiqué y resolví problemas técnicos en la interfaz de usuario, desarrollé componentes reutilizables y conecté el frontend con las APIs del sistema para garantizar una integración fluida. Implementé diseños adaptables, asegurando compatibilidad en distintos dispositivos, y proporcioné mantenimiento continuo para optimizar el rendimiento y la estabilidad de la aplicación.",
     },
     {
         company: "FrontEnd Cafe",
         position: "Desarrollador Frontend",
         ages: "2022",
-        tasks: "Flashcards es un proyecto llevado a cabo por equipos de diseño y desarrollo. Desde el diseño hasta el desarrollo y la implementación, el proyecto proporciona una experiencia que se asemejó mucho a un trabajo del mundo real.",
+        tasks: "Trabaje en un proyecto llamado 'Flashcards' llevado a cabo por equipos de diseño y desarrollo. Desde el diseño hasta el desarrollo y la implementación, el proyecto proporciona una experiencia que se asemejó mucho a un trabajo del mundo real.",
     },
 ]
 
@@ -68,7 +68,7 @@ const Experiencie = ({ages, company, position, tasks, index}:experienceData & {i
 
 export default function HomeExp() {
   return (
-    <section id='experience' className='my-10 md:my-20'>
+    <section id='experience' className='my-10 md:my-36'>
         <SectionTitle text='Experiencia'/>
         
         <div className='mt-5'>

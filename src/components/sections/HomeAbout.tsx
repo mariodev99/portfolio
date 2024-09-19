@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function HomeAbout() {
   return (
-    <div id="about" className="my-10 md:my-20">
+    <div id="about" className="my-10 md:my-36">
       <SectionTitle text="Sobre mi" />
       <motion.p
         className="text-base md:text-2xl mt-5 font-regular"

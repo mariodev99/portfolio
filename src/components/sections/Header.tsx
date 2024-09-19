@@ -215,7 +215,7 @@ export const Header = () => {
         Desarrollador Frontend
         </motion.h2>
         <motion.h1 
-          className='text-center md:text-start text-5xl md:text-8xl font-black tracking-wide '
+          className='text-center md:text-start text-5xl md:text-9xl font-black tracking-wide '
           initial={{
             opacity: 0,
             y: 20
