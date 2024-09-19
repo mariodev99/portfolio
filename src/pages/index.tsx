@@ -12,8 +12,7 @@ import HomeAbout from '@/components/sections/HomeAbout'
 import Footer from '@/components/layout/Footer'
 import Head from 'next/head'
 import { MotionValue, motion, useMotionValue, useMotionValueEvent, useScroll, useTransform } from 'framer-motion'
-import AnimationWraperPage from '@/components/layout/AnimationWraperPage'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,11 +20,11 @@ export default function Home() {
 
   const contactSectionPosition:MotionValue = useTransform(scrollYMotionValue,[3600,4700],[300,0])
 
-  const scrollToTop = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
+  // const scrollToTop = () => {
+  //   if (containerRef.current) {
+  //     containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  //   }
+  // };
 
   // Seteo el scroll
   useEffect(() => {
@@ -85,6 +84,8 @@ export default function Home() {
           <HomeSkills/>
           </>
         </Layout>
+
+        {/* efecto parallax a secciones */}
         <motion.div
           id='contact'
           className='bg-white rounded-t-[60px] py-5 shadow-2xl'

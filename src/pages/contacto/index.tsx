@@ -8,10 +8,14 @@ import { motion } from "framer-motion";
 import selim_image from "@/../public/images/selim.png";
 import PrimaryButton from "@/components/common/buttons/PrimaryButton";
 import ContactButtons from "@/components/sections/contact/ContactButtons";
+import Head from "next/head";
 
 export default function ContactoPage() {
   return (
     <AnimationWraperPage>
+      <Head>
+        <title>Contacto / Mariodev </title>
+      </Head>
       <Layout>
         <section
           id="section_contact"

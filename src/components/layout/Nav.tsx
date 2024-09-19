@@ -370,7 +370,7 @@ export default function Nav() {
 
   return (
     <motion.div
-      className="fixed w-full z-50"
+      className="fixed w-full z-40"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}

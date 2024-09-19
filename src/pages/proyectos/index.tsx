@@ -3,13 +3,18 @@ import { Layout } from "@/components/layout";
 import React from "react";
 import AnimationWraperPage from "@/components/layout/AnimationWraperPage";
 import { usePortfolioContext } from "@/context/dataContext";
+import Head from "next/head";
 
 export default function ProjectPage() {
   const { projectsFromContext } = usePortfolioContext();
 
   return (
     <AnimationWraperPage>
+      <Head>
+        <title>Proyectos / Mariodev </title>
+      </Head>
       <Layout>
+        
         <div className="py-32 md:py-20">
           <h1 className="text-[50px] md:text-[100px] lg:text-[200px] font-semibold">
             Proyectos

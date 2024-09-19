@@ -20,16 +20,13 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <PortfolioProvider>
-      {endAnimation ? (
-        <>
+
+          <StartAnimation />
           <Nav />
           <AnimatePresence mode="wait">
             <Component key={router.pathname} {...pageProps} />
           </AnimatePresence>
-        </>
-      ) : (
-        <StartAnimation />
-      )}
+
     </PortfolioProvider>
   );
 }

@@ -189,15 +189,17 @@ export const Header = () => {
       <motion.div 
         initial={{
           opacity: 0,
-          scale: 0
+          y: 50
         }}
         animate={{
           opacity: 1,
-          scale: 1
+          y: 0
         }}
         transition={ {
           duration: 1,
           delay: 0.3,
+          type: "spring",
+          stiffness: 50
         }}
         className='order-2 lg:order-1 flex justify-center'
       >

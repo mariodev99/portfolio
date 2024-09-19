@@ -24,22 +24,18 @@ export const usePortfolioContext = () => {
 
 export const PortfolioProvider: React.FC<UserProviderProps> = ({ children }) => {
 
-
     const [projectsFromContext, setProjectsFromContext] = useState<ProjectDataType[]>([]);
 
       useEffect( () => {
         
         const fetchData = async () => {
           try {
-            // Llamamos a la función que devuelve una promesa
             const result = await getProjects();
-            // Actualizamos el estado con los datos obtenidos
             setProjectsFromContext(result)
           } catch (error) {
             console.error('Error al obtener los datos:', error);
           }
         };
-        // Llamamos a la función asíncrona
         fetchData();
       }, [])
     
