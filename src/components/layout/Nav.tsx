@@ -353,8 +353,9 @@ export default function Nav() {
 
     logoPrimaryColor = projectsFromContext?.filter(
       (item) => item.title === lastPart
-    )[0].primary_color;
+    )[0]?.primary_color;
   }
+ 
 
   useEffect(() => {
     if (

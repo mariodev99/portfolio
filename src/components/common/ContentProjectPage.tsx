@@ -51,7 +51,7 @@ export default function ContentProjectPage({
         </motion.div>
 
         <div className="flex items-center gap-5 mt-10">
-          {project.url_site && (
+          {project?.url_site && (
             <motion.button
               className="overflow-hidden flex items-center gap-3 rounded-full uppercase font-semibold px-5 py-2 bg-white shadow-lg text-[#159bff]"
               onHoverStart={() => setButtonAnimation(true)}
@@ -91,7 +91,7 @@ export default function ContentProjectPage({
               </motion.div>
             </motion.button>
           )}
-          {project.url_github && (
+          {project?.url_github && (
             <Link
               target="_blank"
               href={project.url_github}
