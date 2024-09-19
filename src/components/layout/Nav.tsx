@@ -165,9 +165,7 @@ const DesktopNavbar = ({
     <div>
       <div className="flex justify-between items-center">
         <Link href="/" className=" ">
-          <LogoIconNav primary_color={"#000"} />
-          {/* <LogoIconNav primary_color={logoPrimaryColor} /> */}
-
+          <LogoIconNav primary_color={logoPrimaryColor} />
         </Link>
 
         <div>
