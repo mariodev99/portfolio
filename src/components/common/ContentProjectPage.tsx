@@ -23,7 +23,7 @@ export default function ContentProjectPage({
       transition={{ duration: 1 }}
     >
       <motion.div className="">
-        <h1 className="text-6xl md:text-7xl mb-10 capitalize">
+        <h1 className="text-6xl md:text-7xl mb-10 capitalize font-medium">
           {project?.title}
         </h1>
         <motion.div
