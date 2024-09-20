@@ -15,8 +15,8 @@ interface contactItems {
 
 export const contactItems: contactItems[] = [
   {
-    url: "mailto:luciano.mariotti99@gmail.com",
-    text: "luciano.mariotti99@gmail.com",
+    url: "mailto:lucianomariodev@gmail.com",
+    text: "lucianomariodev@gmail.com",
     icon: <EmailIcon />,
   },
   {
