@@ -214,7 +214,7 @@ const DesktopNavbar = ({
             </Link>
 
             {/* Contact Button */}
-            <Link href={"mailto:luciano.mariotti99@gmail.com"}>
+            <Link href={"mailto:lucianomariodev@gmail.com"} target="_blank">
               <SecundaryButton
                 text={"HABLEMOS"}
                 primary_color="#00A3FF"
