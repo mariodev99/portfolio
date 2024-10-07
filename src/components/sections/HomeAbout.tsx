@@ -1,35 +1,61 @@
 import React from "react";
 import { SectionTitle } from "../common/SectionTitle";
 import { motion } from "framer-motion";
+import { PrimaryBox } from "../common/PrimaryBox";
+
+const skills = [
+  "CSS",
+  "Javascript",
+  "React.js",
+  "Next.js",
+  "Typescript",
+  "Tailwind",
+  "Bootstrap",
+  "Chakra UI",
+  "Node.js",
+  "Express",
+  "SQL",
+  "MongoDB",
+  "Firebase",
+  "Framer-Motion",
+  "React-Hook-Form",
+  "Git/Github",
+];
 
 export default function HomeAbout() {
   return (
     <div id="about" className="my-10 md:my-36">
       <SectionTitle text="Sobre mi" />
-      <motion.p
-        className="text-base md:text-2xl mt-5 font-regular"
-        initial={{ y: 100 }}
-        whileInView={{ y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-      >
-        Hola! Me llamo Luciano Mariotti, soy un desarrollador frontend en busca
-        de nuevas formas de abordar los desafíos del desarrollo y disrumpir en
-        lo tradicional. Tengo habilidades sólidas en HTML, CSS, JavaScript y
-        React.js. Por otro lado tengo conocimiento en Node.js, SQL y manejo de
-        base de datos relacionales y no relacionales. He trabajado en estrecha
-        colaboración con diseñadores para garantizar la coherencia entre el
-        diseño y la implementación de interfaces de usuario atractivas y fáciles
-        de usar. Me gustan los problemas complejos. Mi enfoque es encontrar
-        soluciones innovadoras que no solo resuelvan los problemas técnicos,
-        sino que también agreguen valor al producto. Sobre mi desarrollo
-        profesional a futuro quiero aprender más sobre la arquitectura de
-        software, mantenimiento y escalabilidad de las aplicaciones. Tambien,
-        estar involucrado en iniciativas donde pueda contribuir no solo con mi
-        experiencia técnica, sino también con mi comprensión del panorama
-        general del negocio y estar en proyectos que me desafíen a pensar de
-        manera creativa y estratégica.
-      </motion.p>
+      <div className="mt-2 grid grid-cols-1 md:grid-cols-[2fr,1fr]  gap-10">
+        <div>
+          <motion.p
+            className="text-base md:text-3xl leading-relaxed md:leading-snug mt-5 font-regular text-[#63666A]"
+            initial={{ y: 100 }}
+            whileInView={{ y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            ¡Hola! Soy Luciano Mariotti, un desarrollador frontend enfocado en
+            encontrar nuevas formas de resolver desafíos de desarrollo y romper
+            con lo tradicional. Me apasionan los problemas complejos y busco
+            soluciones innovadoras que no solo aborden aspectos técnicos, sino
+            que también aporten valor al producto. A futuro, quiero seguir
+            aprendiendo sobre arquitectura de software, mantenimiento y
+            escalabilidad de aplicaciones, y participar en proyectos que me
+            desafíen a pensar creativa y estratégicamente, contribuyendo también
+            desde una visión global del negocio.
+          </motion.p>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          {skills.map((skill) => (
+            <div key={skill} className="flex items-center justify-center">
+              <span className="bg-white shadow-lg rounded-full px-6 py-3 text-xs md:text-lg font-medium">
+                {skill}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

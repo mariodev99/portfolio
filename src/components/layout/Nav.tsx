@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { PrimaryBox } from "../common/PrimaryBox";
 import {
   ArrowIcon,
   ArrowLeft,
@@ -334,40 +333,24 @@ const DesktopNavbar = ({
 
 export default function Nav() {
   const { projectsFromContext } = usePortfolioContext();
+  const [backButtonVisible, setBackButtonVisible] = useState(false);
+  const [currentLogoColor, setCurrentLogoColor] = useState("#000");
 
   const router = useRouter();
-  const actualRoute = router.pathname;
-  const [backButtonVisible, setBackButtonVisible] = useState(false);
-
-  const handleBack = () => router.back();
-
-  let logoPrimaryColor = "#000";
-
-  if (
-    actualRoute != "/" &&
-    actualRoute != "/proyectos" &&
-    actualRoute != "/contacto"
-  ) {
-    const routeParts = actualRoute.split("/");
-    const lastPart = routeParts[routeParts.length - 1];
-
-    logoPrimaryColor = projectsFromContext?.filter(
-      (item) => item.title === lastPart
-    )[0]?.primary_color;
-  }
- 
+  const { id } = router.query;
 
   useEffect(() => {
-    if (
-      actualRoute != "/" &&
-      actualRoute != "/proyectos" &&
-      actualRoute != "/contacto"
-    ) {
+    if (id) {
+      const project = projectsFromContext.find((item) => item.title == id);
+      project && setCurrentLogoColor(project.primary_color);
       setBackButtonVisible(true);
     } else {
+      setCurrentLogoColor("#000");
       setBackButtonVisible(false);
     }
-  }, [actualRoute]);
+  }, [id]);
+
+  const handleBack = () => router.back();
 
   return (
     <motion.div
@@ -378,13 +361,11 @@ export default function Nav() {
     >
       <Layout>
         <motion.div className="w-full py-5 md:py-2 mt-5">
-          {logoPrimaryColor && (
-            <DesktopNavbar
-              handleBack={handleBack}
-              backButtonVisible={backButtonVisible}
-              logoPrimaryColor={logoPrimaryColor}
-            />
-          )}
+          <DesktopNavbar
+            handleBack={handleBack}
+            backButtonVisible={backButtonVisible}
+            logoPrimaryColor={currentLogoColor}
+          />
         </motion.div>
       </Layout>
     </motion.div>

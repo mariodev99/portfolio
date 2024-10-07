@@ -1,4 +1,4 @@
-import { DocumentData, collection, getDocs } from "firebase/firestore"; 
+import { DocumentData, collection, getDocs, orderBy, query } from "firebase/firestore"; 
 import {firestore} from "@/firebase/config"
 import { ProjectDataType } from "@/types";
 
@@ -6,8 +6,9 @@ export const getProjects = async (): Promise<ProjectDataType[]> => {
     let projects: ProjectDataType[] = [];
 
     try {
-        const querySnapshot = await getDocs(collection(firestore, "projects"));
-        
+        const projectsQuery = query(collection(firestore, "projects"), orderBy("position", "asc"));
+        const querySnapshot = await getDocs(projectsQuery);
+
         querySnapshot.forEach((doc) => {
             if (doc.exists()) {
                 const projectData = doc.data() as ProjectDataType; 

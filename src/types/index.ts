@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export interface paletteColorInterace {
     primary: string
     secundary: string
@@ -13,4 +15,5 @@ export interface ProjectDataType {
     primary_color: string
     secundary_color: string
     position: number
+    illustration: ReactNode | string
   }

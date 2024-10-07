@@ -112,7 +112,8 @@ export default function ContentProjectPage({
           className="object-cover "
           src={project?.cover_image}
           alt="imagenes del proyecto codeparty"
-          layout="fill"
+          style={{ objectFit: "cover" }}
+          fill
         />
       </motion.div>
     </motion.div>
