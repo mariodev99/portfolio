@@ -35,15 +35,15 @@ export default function HomeAbout() {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            ¡Hola! Soy Luciano Mariotti, un desarrollador frontend enfocado en
-            encontrar nuevas formas de resolver desafíos de desarrollo y romper
-            con lo tradicional. Me apasionan los problemas complejos y busco
-            soluciones innovadoras que no solo aborden aspectos técnicos, sino
-            que también aporten valor al producto. A futuro, quiero seguir
-            aprendiendo sobre arquitectura de software, mantenimiento y
-            escalabilidad de aplicaciones, y participar en proyectos que me
-            desafíen a pensar creativa y estratégicamente, contribuyendo también
-            desde una visión global del negocio.
+            Desarrollador Frontend con 2 años de experiencia. He diseñado y
+            desarrollado paneles de control personalizados para gestionar
+            grandes volúmenes de datos, optimizando el rendimiento y la
+            experiencia del usuario. Habilidades solidas con CSS, Javascript y
+            desarrollo en React.js, Next.js y TypeScript. Interesado en
+            arquitectura de software, escalabilidad de aplicaciones y diseño de
+            interfaces. Busco oportunidades para crecer en proyectos
+            desafiantes. Actualmente estoy explorando tecnologías cloud como AWS
+            para construir aplicaciones más robustas y escalables.
           </motion.p>
         </div>
         <div className="flex flex-wrap gap-3">

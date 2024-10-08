@@ -32,9 +32,7 @@ export default function ProjectItem({
     >
       <div className="h-[200px] md:h-64 lg:h-96 flex items-center justify-center">
         {illustration ? (
-          <div className="w-[150px] md:w-72 flex justify-center">
-            {illustration}
-          </div>
+          <div className="w-full flex justify-center">{illustration}</div>
         ) : (
           <div className="flex justify-center items-center bg-slate-100 h-44 md:h-64 w-64 md:w-96 relative rounded-[28px] overflow-hidden">
             <Image
