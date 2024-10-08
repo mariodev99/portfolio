@@ -7,7 +7,7 @@ import React, {
   useEffect,
 } from "react";
 import { ProjectDataType } from "@/types";
-import { projectIllustration } from "@/const";
+import { ProjectIllustration } from "@/const";
 
 type PortfolioContextType = {
   projectsFromContext: ProjectDataType[];
@@ -48,7 +48,7 @@ export const PortfolioProvider: React.FC<UserProviderProps> = ({
         const projectsWithImages: any[] = result.map((item, index) => {
           return {
             ...item,
-            illustration: projectIllustration[index].illustration,
+            illustration: ProjectIllustration[index].illustration,
           };
         });
 

@@ -113,7 +113,7 @@ export default function HomeProjects() {
   return (
     <section id="section_proyects" className="my-10 md:my-36">
       <SectionTitle text="Proyectos" />
-      <div className="mt-10 grid md:grid-cols-2 gap-10">
+      <div className="mt-10 grid lg:grid-cols-2 gap-10">
         {projectsFromContext?.slice(0, 4).map((project, index) => (
           <ProjectItem key={project.title} {...project} />
         ))}

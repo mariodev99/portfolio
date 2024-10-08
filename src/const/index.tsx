@@ -1,58 +1,138 @@
 import { motion } from "framer-motion";
 import Slider from "@/components/common/RealEstateSlider";
 
-export const projectIllustration = [
+const variantsFlashcards = {
+  animate: {
+    scale: [1, 1.1, 1],
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      ease: "easeInOut",
+      repeatDelay: 3,
+    },
+  },
+};
+
+const codepartyVariants = {
+  animate: {
+    y: [0, -10, -5, -10, 0],
+    transition: {
+      repeat: Infinity,
+      repeatDelay: 8,
+      duration: 1,
+    },
+  },
+};
+
+const codepartyVariantsEye = {
+  animate: {
+    scaleY: [1, 0.2, 1],
+    originY: 0.5,
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+      repeat: Infinity,
+      repeatDelay: 6,
+    },
+  },
+};
+
+const containerVariants = {
+  animate: {
+    transition: {
+      staggerChildren: 0.5, // El delay entre cada hijo
+    },
+  },
+};
+
+const itemVariants = {
+  initial: {
+    scale: 1,
+  },
+  animate: {
+    scale: [1, 0, 1], // Escala a 0, luego regresa a 1
+    transition: {
+      duration: 1, // Duración de la animación de scale
+      times: [0, 0.5, 1], // Proporciones para cada escala
+      ease: "easeInOut",
+      delay: 4, // Espera 4 segundos antes de escalar nuevamente
+      repeat: Infinity, // Repite infinitamente
+      repeatDelay: 4, // Pausa de 4 segundos antes de repetir
+    },
+  },
+};
+
+export const ProjectIllustration = [
   {
     //flashcards
     illustration: (
-      <svg
+      <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         width="160"
         height="160"
         viewBox="0 0 160 160"
         fill="none"
+        variants={variantsFlashcards}
+        initial="animate"
+        animate="animate"
       >
-        <rect width="160" height="160" rx="25" fill="#1867FF" />
-        <path
+        <motion.rect width="160" height="160" rx="25" fill="#1867FF" />
+        <motion.path
           d="M99.3228 50.5438C101.125 48.2648 99.4265 45.0001 96.4316 45.0001H73.2054C72.5765 44.9955 71.957 45.1528 71.4065 45.4568C70.8559 45.7609 70.3929 46.2014 70.0618 46.7362L52.4865 75.9798C51.0998 78.2831 52.8428 81.157 55.6267 81.157H67.4853L56.3149 109.048C54.6999 112.576 59.0643 115.803 61.997 113.25L107.332 70.3531H83.6461L99.3228 50.5438Z"
           stroke="white"
-          stroke-width="5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          animate={{
+            pathLength: [1, 0, 1],
+            transition: {
+              repeat: Infinity,
+              duration: 3,
+              repeatDelay: 3,
+            },
+          }}
         />
-      </svg>
+      </motion.svg>
     ),
   },
   {
     //codeparty
     illustration: (
-      <div className="w-52 md:w-72 h-52 md:h-72">
+      <div className="">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          height="100%"
+          width="220"
+          height="220"
           viewBox="0 0 245 240"
           fill="none"
         >
-          <path
+          <motion.path
             d="M77.9114 89.8593C78.0337 96.9291 83.8621 102.66 90.9295 102.66C97.997 102.66 103.627 96.9291 103.505 89.8593C103.383 82.7895 97.5543 77.0583 90.4868 77.0583C83.4194 77.0583 77.7892 82.7895 77.9114 89.8593Z"
             fill="#4DB0FA"
+            variants={codepartyVariantsEye}
+            animate={"animate"}
           />
-          <path
+          <motion.path
             d="M105.908 68.534V68.534C96.9519 63.2731 85.9213 63.2731 77.1476 68.534V68.534"
             stroke="#4DB0FA"
             strokeWidth="8"
             strokeLinecap="round"
+            variants={codepartyVariants}
+            animate={"animate"}
           />
-          <path
+          <motion.path
             d="M140.52 89.859C140.642 96.9288 146.47 102.66 153.538 102.66C160.605 102.66 166.235 96.9288 166.113 89.859C165.991 82.7892 160.163 77.058 153.095 77.058C146.028 77.058 140.397 82.7892 140.52 89.859Z"
             fill="#4DB0FA"
+            variants={codepartyVariantsEye}
+            animate={"animate"}
           />
-          <path
+          <motion.path
             d="M167.911 68.534V68.534C158.954 63.273 147.922 63.273 139.147 68.534V68.534"
             stroke="#4DB0FA"
             strokeWidth="8"
             strokeLinecap="round"
+            variants={codepartyVariants}
+            animate={"animate"}
           />
           <path
             d="M82.0331 218.149L82.4103 239.964C-6.28547 239.964 59.6547 130.89 2.26327 130.89L1.88606 109.075C59.2775 109.075 -10.4348 0 78.261 0L78.6382 21.8149C26.4642 21.8149 80.3357 119.982 28.1617 119.982C80.3357 119.982 29.8591 218.149 82.0331 218.149Z"
@@ -67,15 +147,16 @@ export const projectIllustration = [
     ),
   },
   {
+    //chat
     illustration: (
-      //chat
-      <div className="w-52 md:w-72 h-52 md:h-72">
+      <div className="">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          height="100%"
+          width="220"
+          height="220"
           viewBox="0 0 251 266"
           fill="none"
+          // style={{ width: "100%", height: "100%" }}
         >
           <path
             fillRule="evenodd"
@@ -95,6 +176,7 @@ export const projectIllustration = [
           />
           <rect x="27" y="45" width="55" height="8" rx="4" fill="#CCCCCC" />
           <rect x="27" y="57" width="96" height="20" rx="4" fill="#BCBCBC" />
+
           <path
             d="M21 168H84C88.9706 168 93 172.029 93 177V194C93 198.971 88.9706 203 84 203H30C25.0294 203 21 198.971 21 194V168Z"
             fill="#D9D9D9"
@@ -150,10 +232,10 @@ export const projectIllustration = [
           viewBox="0 0 150 150"
           fill="none"
         >
-          <g clip-path="url(#clip0_903_631)">
+          <g clipPath="url(#clip0_903_631)">
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M0 54.0983V137.705H44.2623V105.738L75 137.705L105.738 105.738V137.705H150V54.0983L108.197 12.295H103.279L74.0631 40.5737L46.7213 12.295H41.8033L0 54.0983ZM140.164 56.5573L125.41 44.2623L101.405 68.8524L75 95.9016L23.3607 44.2623L9.83607 59.0164V127.869H34.4262V86.0655H39.3443L75 125.41L110.656 86.0655H115.574V127.869H140.164V56.5573ZM120.492 39.3442L96.4404 63.3956L81.4739 48.2154L105.738 24.5901L120.492 39.3442ZM75 84.836L89.7541 70.0819L44.2623 24.5901L29.5082 39.3442L75 84.836Z"
               fill="black"
             />
