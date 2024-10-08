@@ -14,7 +14,7 @@ const timelineExp: experienceData[] = [
     position: "Desarrollador Frontend",
     ages: "2024",
     tasks:
-      "Me desempeño como desarrollador freelance haciendo pequeñas tareas como integración de APIs, componentes reutilizables, corrección de errores, diseños responsive y más.",
+      "Me desempeño como desarrollador freelance construyendo webs mejorando la presencia de mis clientes, tambien desarrollo pequeñas tareas como integración de APIs, componentes reutilizables, corrección de errores, diseños responsive y más.",
   },
   {
     company: "IF Soluciones",
