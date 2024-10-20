@@ -78,10 +78,7 @@ export default function HomeExp() {
   return (
     <section id="experience" className="my-20 md:my-44">
       <SectionTitle text="Experiencia" />
-
       <div className="mt-5">
-        {/* Timeline 1 */}
-
         {timelineExp.map((experience, index) => (
           <Experiencie key={experience.company} {...experience} index={index} />
         ))}
