@@ -14,6 +14,7 @@ module.exports = {
         // primary: "#00A3FF",
         primary: "#A8FF78",
         bgprimary: "rgba(0, 163, 255, 0.09)",
+        contrast: "#1D2A16",
       },
       borderRadius: {
         box: "60px",

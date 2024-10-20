@@ -6,7 +6,6 @@ import Nav from "@/components/layout/Nav";
 import { SectionTitle } from "@/components/common/SectionTitle";
 import HomeProjects from "@/components/sections/HomeProjects";
 import HomeExp from "@/components/sections/HomeExp";
-import HomeSkills from "@/components/sections/HomeSkills";
 import HomeContact from "@/components/sections/HomeContact";
 import HomeAbout from "@/components/sections/HomeAbout";
 import Footer from "@/components/layout/Footer";
@@ -28,12 +27,6 @@ export default function Home() {
     [3600, 4700],
     [300, 0]
   );
-
-  // const scrollToTop = () => {
-  //   if (containerRef.current) {
-  //     containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  //   }
-  // };
 
   // Seteo el scroll
   useEffect(() => {

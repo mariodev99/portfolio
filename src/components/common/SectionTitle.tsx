@@ -7,7 +7,7 @@ interface Props {
 export const SectionTitle = ({ text }: Props) => {
   return (
     <motion.h3
-      className="text-2xl md:text-6xl font-medium"
+      className="text-3xl md:text-7xl font-medium"
       initial={{ y: 100 }}
       whileInView={{ y: 0 }}
       transition={{ duration: 1 }}

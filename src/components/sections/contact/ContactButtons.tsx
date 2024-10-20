@@ -21,7 +21,6 @@ export default function ContactButtons() {
             primary_color="#fff"
             secundary_color="#121212"
           />
-          {/* <SecundaryButton text={item.text} primary_color='#00A3FF' secundary_color='#2b2e3a'/> */}
         </motion.a>
       ))}
     </div>

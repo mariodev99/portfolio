@@ -18,11 +18,11 @@ export default function HomeProjects() {
         ))}
       </div>
 
-      <Link href={"/proyectos"} className="flex justify-center mt-10">
+      <Link href={"/proyectos"} className="flex justify-center mt-10 md:mt-20">
         <PrimaryButton
           text="VER MÁS"
           primary_color="#A8FF78"
-          secundary_color="#fff"
+          secundary_color="#1D2A16"
         />
       </Link>
     </section>

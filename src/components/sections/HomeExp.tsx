@@ -43,7 +43,7 @@ const Experiencie = ({
     <div className=" h-40 md:h-56 flex flex-col justify-center items-end">
       <div>
         <p className="text-sm md:text-xl">{ages}</p>
-        <h2 className="textxl md:text-3xl">{company}</h2>
+        <h2 className="text-xl md:text-3xl font-medium">{company}</h2>
         <p className="text-sm md:text-xl">{position}</p>
       </div>
     </div>
@@ -59,10 +59,6 @@ const Experiencie = ({
         >
           <div className="absolute bg-primary left-[-7px] w-4 h-4 rounded-full border-2 border-black"></div>
         </div>
-        {/* {timelineExp.length === index + 1 &&             
-                <div className='mt-1 font-medium flex justify-center'>
-                    <p className='text-sm md:text-xl'>2020</p>
-                </div> }      */}
       </div>
     ) : (
       <div className="flex justify-center items-end">
@@ -80,7 +76,7 @@ const Experiencie = ({
 
 export default function HomeExp() {
   return (
-    <section id="experience" className="my-10 md:my-36">
+    <section id="experience" className="my-20 md:my-44">
       <SectionTitle text="Experiencia" />
 
       <div className="mt-5">
