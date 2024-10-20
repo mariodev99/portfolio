@@ -85,14 +85,6 @@ export default function HomeExp() {
         {timelineExp.map((experience, index) => (
           <Experiencie key={experience.company} {...experience} index={index} />
         ))}
-
-        <div className="grid grid-cols-2 md:grid-cols-3 ">
-          <div />
-          <div className="text-[#2b2e3a] text-sm md:text-xl mt-1 font-medium flex justify-center">
-            <p>2020</p>
-          </div>
-          <div />
-        </div>
       </div>
     </section>
   );
