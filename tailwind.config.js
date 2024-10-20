@@ -9,17 +9,10 @@ module.exports = {
     extend: {
       backgroundImage: {},
       colors: {
-        // Theme 1
-        // dark: "#001018",
-        // primary: "#eaff00",
-        // bgprimary: "rgba(0, 163, 255, 0.09)",
-
-        // Theme 2
         light: "#f0f1fa",
         dark: "#121212",
-        primary: "#00A3FF",
-
         // primary: "#00A3FF",
+        primary: "#A8FF78",
         bgprimary: "rgba(0, 163, 255, 0.09)",
       },
       borderRadius: {

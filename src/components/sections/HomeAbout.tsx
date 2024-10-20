@@ -29,7 +29,7 @@ export default function HomeAbout() {
       <div className="mt-2 grid grid-cols-1 md:grid-cols-[2fr,1fr]  gap-10">
         <div>
           <motion.p
-            className="text-base md:text-3xl leading-relaxed md:leading-snug mt-5 font-regular text-[#63666A]"
+            className="text-base md:text-3xl leading-relaxed md:leading-snug mt-5 font-regular text-gray-500"
             initial={{ y: 100 }}
             whileInView={{ y: 0 }}
             transition={{ duration: 1 }}
@@ -49,7 +49,7 @@ export default function HomeAbout() {
         <div className="flex flex-wrap gap-3">
           {skills.map((skill) => (
             <div key={skill} className="flex items-center justify-center">
-              <span className="bg-white shadow-lg rounded-full px-6 py-3 text-xs md:text-lg font-medium">
+              <span className="bg-white border-2 border-gray-300 rounded-full px-6 py-3 text-xs md:text-lg font-medium">
                 {skill}
               </span>
             </div>

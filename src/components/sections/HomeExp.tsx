@@ -54,10 +54,10 @@ const Experiencie = ({
         <div
           className={`w-[2px]  bg-[#2b2e3a] flex items-center relative ${
             timelineExp.length === index + 1 &&
-            "bg-gradient-to-b from-black to-white"
+            "bg-gradient-to-b from-black to-light"
           }`}
         >
-          <div className="absolute bg-primary left-[-7px] w-4 h-4 rounded-full"></div>
+          <div className="absolute bg-primary left-[-7px] w-4 h-4 rounded-full border-2 border-black"></div>
         </div>
         {/* {timelineExp.length === index + 1 &&             
                 <div className='mt-1 font-medium flex justify-center'>
@@ -67,7 +67,7 @@ const Experiencie = ({
     ) : (
       <div className="flex justify-center items-end">
         <div className="w-[2px] h-[50%] bg-[#2b2e3a] flex items-start relative">
-          <div className="absolute bg-primary left-[-7px] w-4 h-4 rounded-full"></div>
+          <div className="absolute bg-primary left-[-7px] w-4 h-4 rounded-full border-2 border-black"></div>
         </div>
       </div>
     )}

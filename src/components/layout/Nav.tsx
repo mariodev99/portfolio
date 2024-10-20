@@ -64,10 +64,12 @@ const itemVariants = {
 const DesktopNavbar = ({
   logoPrimaryColor,
   backButtonVisible,
+  logoSecondaryColor,
   handleBack,
 }: {
   logoPrimaryColor: string;
   backButtonVisible: boolean;
+  logoSecondaryColor: string;
   handleBack: () => void;
 }) => {
   const [buttonMenuAnimation, setButtonMenuAnimation] = useState(false);
@@ -164,7 +166,10 @@ const DesktopNavbar = ({
     <div>
       <div className="flex justify-between items-center">
         <Link href="/" className=" ">
-          <LogoIconNav primary_color={logoPrimaryColor} />
+          <LogoIconNav
+            primary_color={logoPrimaryColor}
+            secondary_color={logoSecondaryColor}
+          />
         </Link>
 
         <div>
@@ -192,7 +197,7 @@ const DesktopNavbar = ({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <motion.button className="group hidden md:flex p-2.5 rounded-full bg-[#e4e6ef] hover:bg-[#00A3FF] duration-300">
+              <motion.button className="group hidden md:flex p-2.5 rounded-full bg-[#e4e6ef] hover:bg-primary duration-300">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -216,7 +221,7 @@ const DesktopNavbar = ({
             <Link href={"mailto:lucianomariodev@gmail.com"} target="_blank">
               <SecundaryButton
                 text={"HABLEMOS"}
-                primary_color="#00A3FF"
+                primary_color="#A8FF78"
                 secundary_color="#121212"
               />
             </Link>
@@ -334,7 +339,9 @@ const DesktopNavbar = ({
 export default function Nav() {
   const { projectsFromContext } = usePortfolioContext();
   const [backButtonVisible, setBackButtonVisible] = useState(false);
-  const [currentLogoColor, setCurrentLogoColor] = useState("#000");
+  const [currentLogoColor, setCurrentLogoColor] = useState("#232323");
+  const [currentLogoSecondColor, setCurrentLogoSecondColor] =
+    useState("#020202");
 
   const router = useRouter();
   const { id } = router.query;
@@ -342,10 +349,14 @@ export default function Nav() {
   useEffect(() => {
     if (id) {
       const project = projectsFromContext.find((item) => item.title == id);
-      project && setCurrentLogoColor(project.primary_color);
+      if (project) {
+        setCurrentLogoColor(project.primary_color);
+        setCurrentLogoSecondColor(project.secundary_color);
+      }
       setBackButtonVisible(true);
     } else {
-      setCurrentLogoColor("#000");
+      setCurrentLogoColor("#232323");
+      setCurrentLogoSecondColor("#020202");
       setBackButtonVisible(false);
     }
   }, [id]);
@@ -365,6 +376,7 @@ export default function Nav() {
             handleBack={handleBack}
             backButtonVisible={backButtonVisible}
             logoPrimaryColor={currentLogoColor}
+            logoSecondaryColor={currentLogoSecondColor}
           />
         </motion.div>
       </Layout>

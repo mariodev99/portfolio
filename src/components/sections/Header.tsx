@@ -1,10 +1,14 @@
-import React from 'react'
-import { Poppins } from 'next/font/google'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import profileImage1 from "../../../public/images/profile_portfolio.jpg"
+import React from "react";
+import { Poppins } from "next/font/google";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import profileImage1 from "../../../public/images/profile_portfolio.jpg";
 
-const poppins = Poppins({ weight: ["400","500","900"], subsets: ['latin'], style: "italic"})
+const poppins = Poppins({
+  weight: ["400", "500", "900"],
+  subsets: ["latin"],
+  style: "italic",
+});
 
 // const ImageProfileMask = () => (
 //     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
@@ -177,79 +181,81 @@ const poppins = Poppins({ weight: ["400","500","900"], subsets: ['latin'], style
 // )
 
 const ImageProfileStandard = () => (
-  <div className='relative h-100 w-[60%] overflow-hidden rounded-[80px]'>
-    <Image priority alt='Foto de Luciano Mariotti' src={profileImage1}/>
+  <div className="relative h-100 w-[60%] overflow-hidden rounded-[80px]">
+    <Image priority alt="Foto de Luciano Mariotti" src={profileImage1} />
   </div>
-)
-
+);
 
 export const Header = () => {
   return (
-    <section id='section_header' className='grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center pt-32 md:pt-14 md:mt-10 gap-2'>
-      <motion.div 
+    <section
+      id="section_header"
+      className="grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center pt-32 md:pt-14 md:mt-10 gap-2"
+    >
+      <motion.div
         initial={{
           opacity: 0,
-          y: 50
+          y: 50,
         }}
         animate={{
           opacity: 1,
-          y: 0
+          y: 0,
         }}
-        transition={ {
+        transition={{
           duration: 1,
           delay: 0.3,
           type: "spring",
-          stiffness: 50
+          stiffness: 50,
         }}
-        className='order-2 lg:order-1 flex justify-center'
+        className="order-2 lg:order-1 flex justify-center"
       >
-        <ImageProfileStandard/>
+        <ImageProfileStandard />
       </motion.div>
       <div className={`${poppins.className} order-1 lg:order-2`}>
-        <motion.h2 
-          className='my-3 text-center md:hidden text-xl' 
-          initial={{ opacity: 0}} 
-          animate={{opacity: 1}}
-          transition={{ delay: 0.5}}
+        <motion.h2
+          className="my-3 text-center md:hidden text-xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
         >
-        Desarrollador Frontend
+          Desarrollador Frontend
         </motion.h2>
-        <motion.h1 
-          className='text-center md:text-start text-5xl md:text-9xl font-black tracking-wide '
+        <motion.h1
+          className="text-center md:text-start text-5xl md:text-9xl font-black tracking-wide "
           initial={{
             opacity: 0,
-            y: 20
+            y: 20,
           }}
           animate={{
             opacity: 1,
-            y: 0
-
+            y: 0,
           }}
-          transition={ {
+          transition={{
             duration: 1,
           }}
         >
-          Luciano <br/> Mariotti 
+          Luciano <br /> Mariotti
         </motion.h1>
-        <motion.p 
+        <motion.p
           initial={{
             opacity: 0,
-            y: 20
+            y: 20,
           }}
           animate={{
             opacity: 1,
-            y: 0
+            y: 0,
           }}
-          transition={ {
+          transition={{
             duration: 1,
-            delay: 0.3
+            delay: 0.3,
           }}
-          className='mt-5 text-xl font-normal hidden lg:block'
+          className="mt-5 text-xl font-normal hidden lg:block"
         >
-          Desarrollador front end que disfruta de diseñar y plasmar ideas creativas en la web.
+          Desarrollador frontend apasionado por fusionar código y diseño para
+          crear soluciones únicas, con un especial interés en la arquitectura de
+          software.{" "}
         </motion.p>
       </div>
-
-  </section>
-  )
-}
+    </section>
+  );
+};
