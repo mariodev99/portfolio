@@ -59,7 +59,7 @@ export const Header = () => {
         </motion.div>
         {/* por cada letra hacer animacion de y e opacity */}
         <motion.div
-          className="hidden md:block overflow-hidden"
+          className=" overflow-hidden"
           initial={{ width: 0 }}
           animate={{ width: "auto" }}
           transition={{ delay: 5.2, duration: 0.8, ease: "easeInOut" }}

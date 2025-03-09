@@ -14,16 +14,16 @@ const Experience = ({
 }: experienceData) => (
   <div className="first:border-t-0 border-t-2 py-6 font-regular">
     <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center ">
-      <div className="flex gap-3 text-lg md:text-4xl items-center font-medium">
+      <div className="flex gap-3 text-base md:text-xl lg:text-3xl items-center font-medium">
         <div>{position}</div>
         <div>{icon}</div>
         <div>
           at <span className=""> {company}</span>
         </div>
       </div>
-      <div className="mt-2 text-base md:text-2xl">{ages}</div>
+      <div className="mt-2 text-sm md:text-xl lg:text-3xl">{ages}</div>
     </div>
-    <div className="mt-2 text-base md:text-xl w-full md:w-4/5  text-gray-800">
+    <div className="mt-2 text-sm md:text-lg w-full md:w-2/3  text-gray-800">
       {tasks}
     </div>
   </div>

@@ -10,7 +10,7 @@ export default function SliderBox() {
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       transition={{ delay: 5.2, duration: 0.8, ease: "easeInOut" }}
-      className={`${HEIGHT_BOX}  bg-black relative overflow-hidden bg-[url('/images/profile_portfolio.jpg')] bg-cover bg-center rounded-2xl md:rounded-full mt-4`}
+      className={`${HEIGHT_BOX} hidden md:block bg-black relative overflow-hidden bg-[url('/images/profile_portfolio.jpg')] bg-cover bg-center rounded-2xl md:rounded-full mt-4`}
     >
       <motion.div
         animate={{ y: [80, 0, -80, -160, -240, -320] }} // Se mueve en pasos de 80px

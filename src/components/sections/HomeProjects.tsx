@@ -11,7 +11,7 @@ export default function HomeProjects() {
 
   return (
     <section id="section_proyects" className="my-10 md:my-36">
-      <SectionTitle text="Proyectos" />
+      <SectionTitle text="Projects" />
       <div className="mt-10 grid lg:grid-cols-2 gap-10">
         {projectsFromContext?.slice(0, 4).map((project, index) => (
           <ProjectItem key={project.title} {...project} />
@@ -20,7 +20,7 @@ export default function HomeProjects() {
 
       <Link href={"/proyectos"} className="flex justify-center mt-10 md:mt-20">
         <PrimaryButton
-          text="VER MÁS"
+          text="VIEW MORE"
           primary_color="#A8FF78"
           secundary_color="#000"
         />
