@@ -31,7 +31,7 @@ export const timelineExp: experienceData[] = [
     ages: "September 2024 - Present",
     icon: <HBAgency />,
     tasks:
-      "Fullstack Developer at HBAgency: I worked on both frontend and backend development, designing user interfaces, building applications, and managing databases to ensure seamless functionality and performance.",
+      "I worked on both frontend and backend development, designing user interfaces, building applications, and managing databases to ensure seamless functionality and performance.",
   },
   {
     company: "Freelancer",
