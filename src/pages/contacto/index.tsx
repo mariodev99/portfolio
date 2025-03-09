@@ -12,14 +12,14 @@ export default function ContactoPage() {
   return (
     <AnimationWraperPage>
       <Head>
-        <title>Contacto / Mariodev </title>
+        <title>Contact / Mariodev </title>
       </Head>
       <Layout>
         <section
           id="section_contact"
           className="my-44 flex flex-col items-center"
         >
-          <SectionTitle text="Contacto" />
+          <SectionTitle text="Contact" />
 
           <motion.p
             initial={{ y: 70 }}
@@ -27,8 +27,7 @@ export default function ContactoPage() {
             transition={{ duration: 1 }}
             className="text-center mt-5 text-md md:text-xl font-medium"
           >
-            Mi bandeja de entrada siempre esta abierta para cualquier consulta
-            que quieras hacerme.
+            My inbox is always open for any questions you may have.
           </motion.p>
           {/* Imagen de Selim */}
           <motion.div
@@ -58,7 +57,7 @@ export default function ContactoPage() {
               },
             }}
           >
-            <Image src={selim_image} alt="Perro de Luciano Mariotti" />
+            <Image src={selim_image} alt=" Luciano Mariotti Dog" />
           </motion.div>
           <ContactButtons />
         </section>

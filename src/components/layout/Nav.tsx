@@ -77,15 +77,15 @@ const DesktopNavbar = ({
 
   const LinkList = [
     {
-      title: "Inicio",
+      title: "Home",
       href: "/",
     },
     {
-      title: "Proyectos",
+      title: "Projects",
       href: "/proyectos",
     },
     {
-      title: "Contacto",
+      title: "Contact",
       href: "/contacto",
     },
   ];
@@ -283,7 +283,7 @@ const DesktopNavbar = ({
                 transition={{ type: "spring", duration: 1 }}
               >
                 <FileDownload stroke={"#fff"} width={"30"} height={"30"} />
-                Resumen
+                Resume
                 <ArrowRight />
               </motion.div>
             </Link>{" "}
@@ -326,7 +326,7 @@ const DesktopNavbar = ({
               transition={{ type: "spring", duration: 1 }}
             >
               <FileDownload stroke={"#fff"} width={"30"} height={"30"} />
-              Resumen
+              Resume
               <ArrowRight />
             </motion.div>
           </Link>

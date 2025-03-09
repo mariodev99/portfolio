@@ -20,7 +20,7 @@ export const contactItems: contactItems[] = [
     icon: <EmailIcon />,
   },
   {
-    url: "https://github.com/mariodev9/",
+    url: "https://github.com/mariodev99/",
     text: "Github",
     icon: <GithubIcon />,
   },
