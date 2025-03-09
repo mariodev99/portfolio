@@ -220,7 +220,7 @@ const DesktopNavbar = ({
             {/* Contact Button */}
             <Link href={"mailto:lucianomariodev@gmail.com"} target="_blank">
               <SecundaryButton
-                text={"HABLEMOS"}
+                text={"CONTACT ME"}
                 primary_color="#A8FF78"
                 secundary_color="#1D2A16"
               />
