@@ -31,7 +31,7 @@ export const timelineExp: experienceData[] = [
     ages: "September 2024 - Present",
     icon: <HBAgency />,
     tasks:
-      "Trabaje en un proyecto llamado 'Flashcards' llevado a cabo por equipos de diseño y desarrollo. Desde el diseño hasta el desarrollo y la implementación, el proyecto proporciona una experiencia que se asemejó mucho a un trabajo del mundo real.",
+      "Fullstack Developer at HBAgency: I worked on both frontend and backend development, designing user interfaces, building applications, and managing databases to ensure seamless functionality and performance.",
   },
   {
     company: "Freelancer",
