@@ -1,86 +1,63 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { SectionTitle } from "../common/SectionTitle";
+import Separator from "../common/Separator";
+import { HBAgency } from "../icons";
+import { timelineExp } from "@/const";
+import { experienceData } from "@/interfaces";
 
-interface experienceData {
-  company: string;
-  position: string;
-  ages: string;
-  tasks: string;
-}
-
-const timelineExp: experienceData[] = [
-  {
-    company: "Freelancer",
-    position: "Desarrollador Frontend",
-    ages: "2024",
-    tasks:
-      "Me desempeño como desarrollador freelance construyendo webs mejorando la presencia de mis clientes, tambien desarrollo pequeñas tareas como integración de APIs, componentes reutilizables, corrección de errores, diseños responsive y más.",
-  },
-  {
-    company: "IF Soluciones",
-    position: "Desarrollador Frontend",
-    ages: "2022 - 2024",
-    tasks:
-      "Como desarrollador frontend identifiqué y resolví problemas técnicos en la interfaz de usuario, desarrollé componentes reutilizables y conecté el frontend con las APIs del sistema para garantizar una integración fluida. Implementé diseños adaptables, asegurando compatibilidad en distintos dispositivos, y proporcioné mantenimiento continuo para optimizar el rendimiento y la estabilidad de la aplicación.",
-  },
-  {
-    company: "FrontEnd Cafe",
-    position: "Desarrollador Frontend",
-    ages: "2022",
-    tasks:
-      "Trabaje en un proyecto llamado 'Flashcards' llevado a cabo por equipos de diseño y desarrollo. Desde el diseño hasta el desarrollo y la implementación, el proyecto proporciona una experiencia que se asemejó mucho a un trabajo del mundo real.",
-  },
-];
-
-const Experiencie = ({
-  ages,
+const Experience = ({
   company,
   position,
+  ages,
   tasks,
-  index,
-}: experienceData & { index: number }) => (
-  <div className="grid grid-cols-2 md:grid-cols-3 ">
-    <div className=" h-40 md:h-56 flex flex-col justify-center items-end">
-      <div>
-        <p className="text-sm md:text-xl">{ages}</p>
-        <h2 className="text-xl md:text-3xl font-medium">{company}</h2>
-        <p className="text-sm md:text-xl">{position}</p>
-      </div>
-    </div>
-
-    {/* item */}
-    {index > 0 ? (
-      <div className="flex justify-center">
-        <div
-          className={`w-[2px]  bg-[#2b2e3a] flex items-center relative ${
-            timelineExp.length === index + 1 &&
-            "bg-gradient-to-b from-black to-light"
-          }`}
-        >
-          <div className="absolute bg-primary left-[-7px] w-4 h-4 rounded-full border-2 border-black"></div>
+  icon,
+}: experienceData) => (
+  <div className="first:border-t-0 border-t-2 py-6 font-regular">
+    <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center ">
+      <div className="flex gap-3 text-lg md:text-4xl items-center font-medium">
+        <div>{position}</div>
+        <div>{icon}</div>
+        <div>
+          at <span className=""> {company}</span>
         </div>
       </div>
-    ) : (
-      <div className="flex justify-center items-end">
-        <div className="w-[2px] h-[50%] bg-[#2b2e3a] flex items-start relative">
-          <div className="absolute bg-primary left-[-7px] w-4 h-4 rounded-full border-2 border-black"></div>
-        </div>
-      </div>
-    )}
-
-    <div className="hidden md:flex items-center h-40 md:h-56">
-      <p>{tasks}</p>
+      <div className="mt-2 text-base md:text-2xl">{ages}</div>
     </div>
+    <div className="mt-2 text-base md:text-xl w-full md:w-4/5  text-gray-800">
+      {tasks}
+    </div>
+  </div>
+);
+
+const ExperienceMobile = ({
+  company,
+  position,
+  ages,
+  tasks,
+  icon,
+}: experienceData) => (
+  <div className="first:border-t-0 border-t-2 py-4">
+    <div className="flex gap-2 ">
+      <div>{icon}</div>
+      <div className="">
+        <div className="text-3xl font-semibold">{company}</div>
+        <div className="text-xl">{position}</div>
+      </div>
+    </div>
+    <div className="text-lg mt-2">{ages}</div>
+
+    <div className=" w-full md:w-4/5 mt-4">{tasks}</div>
   </div>
 );
 
 export default function HomeExp() {
   return (
     <section id="experience" className="my-20 md:my-44">
-      <SectionTitle text="Experiencia" />
-      <div className="mt-5">
+      <SectionTitle text="Work Experience" />
+      <Separator />
+      <div className="flex flex-col gap-4 ">
         {timelineExp.map((experience, index) => (
-          <Experiencie key={experience.company} {...experience} index={index} />
+          <Experience key={experience.company} {...experience} />
         ))}
       </div>
     </section>

@@ -15,6 +15,7 @@ module.exports = {
         primary: "#A8FF78",
         bgprimary: "rgba(0, 163, 255, 0.09)",
         contrast: "#1D2A16",
+        graycontent: "#cbcbcb",
       },
       borderRadius: {
         box: "60px",

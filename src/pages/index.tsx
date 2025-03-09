@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { Layout } from "@/components/layout";
 import { Header } from "@/components/sections/Header";
 import { SliderProjects } from "@/components/sections/SliderProjects";
@@ -17,6 +17,9 @@ import {
   useTransform,
 } from "framer-motion";
 import { useEffect, useRef } from "react";
+import HomeSkills from "@/components/sections/HomeSkills";
+
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -69,17 +72,19 @@ export default function Home() {
         duration: 0.5,
         ease: "easeInOut",
       }}
+      className={jakarta.className}
     >
       <Head>
-        <title>Mariodev</title>
+        <title>Mariodev | Frontend developer</title>
       </Head>
       <Layout>
         <Header />
       </Layout>
-      <SliderProjects currentScroll={scrollYMotionValue} />
+      {/* <SliderProjects currentScroll={scrollYMotionValue} /> */}
       <Layout>
         <>
           <HomeAbout />
+          <HomeSkills />
           <HomeExp />
           <HomeProjects />
         </>

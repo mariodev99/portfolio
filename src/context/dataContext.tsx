@@ -7,7 +7,7 @@ import React, {
   useEffect,
 } from "react";
 import { ProjectDataType } from "@/types";
-import { ProjectIllustration } from "@/const";
+import { ProjectIllustration } from "@/framervariants";
 
 type PortfolioContextType = {
   projectsFromContext: ProjectDataType[];

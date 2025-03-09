@@ -44,7 +44,7 @@ export default function HomeContact({
 
   return (
     <section id="section_contact" className="my-20 flex flex-col items-center">
-      <SectionTitle text="Contacto" />
+      <SectionTitle text="Contact" />
 
       <motion.p
         initial={{ y: 50 }}
@@ -52,8 +52,7 @@ export default function HomeContact({
         transition={{ duration: 1 }}
         className="text-center mt-5 text-md md:text-xl font-medium"
       >
-        Mi bandeja de entrada siempre esta abierta para cualquier consulta que
-        quieras hacerme.
+        My inbox is always open for any questions you may have.
       </motion.p>
       {/* Imagen de Selim */}
       <motion.div

@@ -4,10 +4,10 @@ interface Props {
   text: string;
 }
 
-export const SectionTitle = ({ text }: Props) => {
+export const SectionTitle = ({ text }: { text: string }) => {
   return (
     <motion.h3
-      className="text-4xl md:text-7xl font-medium"
+      className="text-5xl md:text-7xl font-bold"
       initial={{ y: 100 }}
       whileInView={{ y: 0 }}
       transition={{ duration: 1 }}

@@ -1,10 +1,6 @@
 import React from "react";
 
-interface Props {
-  text: string;
-}
-
-export const PrimaryBox = ({ text }: Props) => {
+export const PrimaryBox = ({ text }: { text: string }) => {
   // bg-primary/[.15]
   return (
     <div

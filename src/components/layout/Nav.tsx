@@ -368,7 +368,7 @@ export default function Nav() {
       className="fixed w-full z-40"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.8, delay: 5.5 }}
     >
       <Layout>
         <motion.div className="w-full py-5 md:py-2 mt-5">

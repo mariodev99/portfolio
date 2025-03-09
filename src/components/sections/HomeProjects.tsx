@@ -22,7 +22,7 @@ export default function HomeProjects() {
         <PrimaryButton
           text="VER MÁS"
           primary_color="#A8FF78"
-          secundary_color="#1D2A16"
+          secundary_color="#000"
         />
       </Link>
     </section>
